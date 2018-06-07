@@ -5,15 +5,19 @@
   
 
   
-  <title>Hexo</title>
+  <title>promise | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="promise 优化AJAX  三种形态（进行中、成功、失败）解决方案  相当于是一个规范 解决JS中多个异步回调的维护和优化 promise构造函数var s = new Promise new Promise(function (resolved, rejected){}) 1、pending状态  =&amp;gt; resolved / rejected2  Promise 对象 调用then (">
+<meta property="og:type" content="article">
+<meta property="og:title" content="promise">
+<meta property="og:url" content="http://yoursite.com/2018/06/07/promise/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="promise 优化AJAX  三种形态（进行中、成功、失败）解决方案  相当于是一个规范 解决JS中多个异步回调的维护和优化 promise构造函数var s = new Promise new Promise(function (resolved, rejected){}) 1、pending状态  =&amp;gt; resolved / rejected2  Promise 对象 调用then (">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-07T12:43:36.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="promise">
+<meta name="twitter:description" content="promise 优化AJAX  三种形态（进行中、成功、失败）解决方案  相当于是一个规范 解决JS中多个异步回调的维护和优化 promise构造函数var s = new Promise new Promise(function (resolved, rejected){}) 1、pending状态  =&amp;gt; resolved / rejected2  Promise 对象 调用then (">
   
     <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,85 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-four-md-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/07/four-md-md/" class="article-date">
-  <time datetime="2018-06-07T12:03:56.000Z" itemprop="datePublished">2018-06-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/07/four-md-md/">four-md.md</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/four-md-md/" data-id="cji4mcafd0000owv64itlyfbv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-three-md-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/07/three-md-md/" class="article-date">
-  <time datetime="2018-06-07T10:48:15.000Z" itemprop="datePublished">2018-06-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/07/three-md-md/">three-md.md</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h3 id="数据类型-七大类型"><a href="#数据类型-七大类型" class="headerlink" title="数据类型 七大类型"></a>数据类型 七大类型</h3><p>基本数据类型：number 、 string 、 boolean 、 undefined 、 null<br>复杂数据类型/引用数据类型  (object array) 、 (object function)<br>null是空的对象 =&gt; var obj = null<br>所以 undefined === null //false</p>
-<h3 id="引用类型-三大类型"><a href="#引用类型-三大类型" class="headerlink" title="引用类型  三大类型"></a>引用类型  三大类型</h3><p>1、array类型<br>   a)使用array构造函数  var  arr = new Array()<br>   b)字面量表示法 var  arr = [a,b,c]</p>
-<p>2、object类型<br>   a)object构造函数 var obj = new Object()<br>   b)字面量表示法<br>        简单字面量 var obj = {}<br>        嵌套字面量 var obj = {<br>                        name:’xiaoming’,<br>                        age:20<br>                 }<br>    c)工厂方式<br>    function createObj(name){<br>        var obj = new Object()<br>        obj.name = name<br>        obj.showName = function(){function(){console.log(this.name)}}<br>        return obj<br>    }<br>    var p = createObj(‘a’)<br>    p.showName()</p>
-<p>   d)构造函数  首字母大写 驼峰式<br>    function CreateObj(name){<br>            this.name = name<br>            this.showName = function(){function(){console.log(this.name)}}<br>        }<br>        var p = new CreateObj(‘a’)<br>        p.showName()</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cji4mcafs0002owv6xatdy39q" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="psot-promise" class="article article-type-psot" itemscope itemprop="blogPost">
+        <section id="main"><article id="psot-promise" class="article article-type-psot" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/06/07/promise/" class="article-date">
   <time datetime="2018-06-07T02:34:45.000Z" itemprop="datePublished">2018-06-07</time>
@@ -151,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/07/promise/">promise</a>
+    <h1 class="article-title" itemprop="name">
+      promise
     </h1>
   
 
@@ -264,97 +190,28 @@ myPromise.prototype.then = function (onResolved, onRejected) {
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-one-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/07/one-md/" class="article-date">
-  <time datetime="2018-06-06T16:12:35.000Z" itemprop="datePublished">2018-06-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/blog/2018/06/07/three-md-md/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/07/one-md/">MAP</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>####键值对  类似对象   传统对象只能用字符串当作键名，map的键可以是其他的类型</p>
-<h3 id="map上的方法"><a href="#map上的方法" class="headerlink" title="map上的方法"></a>map上的方法</h3><p>var v = Map();//创建方法<br>.set(key，vlu)//存储方法<br>.get()//获取值得方法<br>.has()//判断方法<br>.delete()<br>.clear()<br>.size()//长度</p>
-<h3 id="for-of-获取值"><a href="#for-of-获取值" class="headerlink" title="for of 获取值"></a>for of 获取值</h3><p>for (let key of m1.keys()){<br>}<br>for (let key of m1.values()){<br>}<br>for (let [k,v] of m1()){<br>}</p>
-<h3 id="运用扩展运算符取值"><a href="#运用扩展运算符取值" class="headerlink" title="运用扩展运算符取值"></a>运用扩展运算符取值</h3><p>var s = […keys()]<br>var s = […values()]<br>var s = […m1()]</p>
-<h3 id="转换类型"><a href="#转换类型" class="headerlink" title="转换类型"></a>转换类型</h3><p>1、map转数组  扩展运算符<br>2、数组转map  new Map(s)  new Map([…s])<br>3、转为对象<br>var o = {}<br>for (let [k,v] of m1){<br>    o[k] = v;<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cji4mcahy0004owv60ar5rjsv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/06/hello-world/" class="article-date">
-  <time datetime="2018-06-06T15:55:52.835Z" itemprop="datePublished">2018-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          three-md.md
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/06/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/blog/2018/06/07/one-md/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MAP</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cji4mcafs0003owv6aaa299wg" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
