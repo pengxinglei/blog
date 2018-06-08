@@ -5,19 +5,19 @@
   
 
   
-  <title>three-md.md | Hexo</title>
+  <title>JS类型 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JS数据类型 七大类型基本数据类型：number 、 string 、 boolean 、 undefined 、 null复杂数据类型/引用数据类型  (object array) 、 (object function)null是空的对象 =&amp;gt; var obj = null所以 undefined === null //false 引用类型  三大类型1、array类型   a)使用arr">
+  <meta name="description" content="JS类型数据类型 七大类型基本数据类型：number 、 string 、 boolean 、 undefined 、 null复杂数据类型/引用数据类型  (object array) 、 (object function)null是空的对象 =&amp;gt; var obj = null所以 undefined === null //false 引用类型  三大类型1、array类型   a)使用a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="three-md.md">
+<meta property="og:title" content="JS类型">
 <meta property="og:url" content="http://yoursite.com/2018/06/07/three-md-md/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JS数据类型 七大类型基本数据类型：number 、 string 、 boolean 、 undefined 、 null复杂数据类型/引用数据类型  (object array) 、 (object function)null是空的对象 =&amp;gt; var obj = null所以 undefined === null //false 引用类型  三大类型1、array类型   a)使用arr">
+<meta property="og:description" content="JS类型数据类型 七大类型基本数据类型：number 、 string 、 boolean 、 undefined 、 null复杂数据类型/引用数据类型  (object array) 、 (object function)null是空的对象 =&amp;gt; var obj = null所以 undefined === null //false 引用类型  三大类型1、array类型   a)使用a">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-07T12:03:40.915Z">
+<meta property="og:updated_time" content="2018-06-08T03:53:36.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="three-md.md">
-<meta name="twitter:description" content="JS数据类型 七大类型基本数据类型：number 、 string 、 boolean 、 undefined 、 null复杂数据类型/引用数据类型  (object array) 、 (object function)null是空的对象 =&amp;gt; var obj = null所以 undefined === null //false 引用类型  三大类型1、array类型   a)使用arr">
+<meta name="twitter:title" content="JS类型">
+<meta name="twitter:description" content="JS类型数据类型 七大类型基本数据类型：number 、 string 、 boolean 、 undefined 、 null复杂数据类型/引用数据类型  (object array) 、 (object function)null是空的对象 =&amp;gt; var obj = null所以 undefined === null //false 引用类型  三大类型1、array类型   a)使用a">
   
     <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      three-md.md
+      JS类型
     </h1>
   
 
@@ -86,15 +86,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h3 id="数据类型-七大类型"><a href="#数据类型-七大类型" class="headerlink" title="数据类型 七大类型"></a>数据类型 七大类型</h3><p>基本数据类型：number 、 string 、 boolean 、 undefined 、 null<br>复杂数据类型/引用数据类型  (object array) 、 (object function)<br>null是空的对象 =&gt; var obj = null<br>所以 undefined === null //false</p>
+        <h2 id="JS类型"><a href="#JS类型" class="headerlink" title="JS类型"></a>JS类型</h2><h3 id="数据类型-七大类型"><a href="#数据类型-七大类型" class="headerlink" title="数据类型 七大类型"></a>数据类型 七大类型</h3><p>基本数据类型：number 、 string 、 boolean 、 undefined 、 null<br>复杂数据类型/引用数据类型  (object array) 、 (object function)<br>null是空的对象 =&gt; var obj = null<br>所以 undefined === null //false</p>
 <h3 id="引用类型-三大类型"><a href="#引用类型-三大类型" class="headerlink" title="引用类型  三大类型"></a>引用类型  三大类型</h3><p>1、array类型<br>   a)使用array构造函数  var  arr = new Array()<br>   b)字面量表示法 var  arr = [a,b,c]</p>
 <p>2、object类型<br>   a)object构造函数 var obj = new Object()<br>   b)字面量表示法<br>        简单字面量 var obj = {}<br>        嵌套字面量 var obj = {<br>                        name:’xiaoming’,<br>                        age:20<br>                 }<br>    c)工厂方式<br>    function createObj(name){<br>        var obj = new Object()<br>        obj.name = name<br>        obj.showName = function(){function(){console.log(this.name)}}<br>        return obj<br>    }<br>    var p = createObj(‘a’)<br>    p.showName()</p>
-<p>   d)构造函数  首字母大写 驼峰式<br>    function CreateObj(name){<br>            this.name = name<br>            this.showName = function(){function(){console.log(this.name)}}<br>        }<br>        var p = new CreateObj(‘a’)<br>        p.showName()</p>
+<p>   d)构造函数  首字母大写 驼峰式</p>
+<pre><code>function CreateObj(name){
+        this.name = name
+        this.showName = function(){function(){console.log(this.name)}}
+    }
+    var p = new CreateObj(&apos;a&apos;)
+    p.showName()
+</code></pre><p>2、function类型</p>
+<p>  a)函数声明//在前后调用都可以<br>    sum()<br>    function sum(){}<br>    sum()</p>
+<p>  a)函数表达式//在后面调用<br>    var sum = function(){}<br>    sum()</p>
+<p>值类型和引用类型的区别<br>值类型，直接赋给别人，不会互相影响<br>引用类型会改变原来的</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cji4mcafs0002owv6xatdy39q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cji5fsbm700043wv65sf3gfr1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +166,7 @@
           </li>
         
           <li>
-            <a href="/blog/2018/06/07/three-md-md/">three-md.md</a>
+            <a href="/blog/2018/06/07/three-md-md/">JS类型</a>
           </li>
         
           <li>
