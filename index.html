@@ -62,10 +62,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-four-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-five-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/06/07/four-md-md/" class="article-date">
-  <time datetime="2018-06-07T12:03:56.000Z" itemprop="datePublished">2018-06-07</time>
+    <a href="/blog/2018/06/10/five-md-md/" class="article-date">
+  <time datetime="2018-06-10T12:23:55.000Z" itemprop="datePublished">2018-06-10</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/07/four-md-md/">four-md.md</a>
+      <a class="article-title" href="/blog/2018/06/10/five-md-md/">属性</a>
     </h1>
   
 
@@ -84,11 +84,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="属性添加和获取"><a href="#属性添加和获取" class="headerlink" title="属性添加和获取 ./[]"></a>属性添加和获取 ./[]</h3><p>区别.取自身的属性  []可以是变量</p>
+<p>属性的添加和获取：<br>var obj = {}<br>obj.name = ‘xm’<br>obj[‘age’] = 20</p>
+<p>var obj = {}<br>    obj.name = ‘xz’<br>    obj.a = ‘aa’<br>var a = ‘name’</p>
+<pre><code>obj[&apos;a&apos;] //aaa
+obj[a] //xz =&gt; obj[&apos;name&apos;]
+</code></pre><h3 id="属性删除-delete"><a href="#属性删除-delete" class="headerlink" title="属性删除 delete"></a>属性删除 delete</h3><p>var obj = {}<br>obj.name = ‘xm’<br>obj.nage = 20<br>delete obj.name<br>delete obj.[‘age’]</p>
+<h3 id="属性检测-判断对象中是否存在属性"><a href="#属性检测-判断对象中是否存在属性" class="headerlink" title="属性检测 判断对象中是否存在属性"></a>属性检测 判断对象中是否存在属性</h3><p>1、in 运算符(可以获取继承的属性)<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>console.log(‘name’ in obj) //true  =&gt; true/false</p>
+<p>2、使用对象hasOwnProperty()方法(不可以获取继承的属性)<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>obj.hasOwnProperty(‘name’) //true  =&gt; true/false</p>
+<p>3、!= undefined 值得判断  缺点是值不能为undefined =&gt; name = undefined<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>console.log(obj.name !== undefined) //true  =&gt; true/false</p>
+<h3 id="枚举属性"><a href="#枚举属性" class="headerlink" title="枚举属性"></a>枚举属性</h3><p>1、for in<br>var arr = [‘a’, ‘b’ ,’c’, ‘d’]<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>for(a in obj){//for(属性 in 对象)<br>    console.log(a) //name age<br>    console.log(obj[a]) //xz 20  不能用obj.a =&gt; a 是变量<br>}<br>for(a in arr){//for(索引 in 数组)<br>    console.log(a) //0 1 2 3 4<br>    console.log(arr[a]) //a b c d<br>}</p>
+<p>2、forEach() map() 都是便利数组的方法， map有返回值 ie6、7不支持<br>var arr = [‘a’, ‘b’ ,’c’, ‘d’]<br>arr.forEach(function(item,index){<br>    console.log(item)<br>})</p>
+<p>arr.map() 回调函数支持return返回值<br>arr.map(function(item,index){<br>    return item<br>})</p>
+<p>数组还可以用for循环<br>for(var i;i&lt;10;i++){}</p>
+<h3 id="序列化-JSON-parse-对象字符串转为对象-深拷贝-JSON-stringify-对象转对象字符串"><a href="#序列化-JSON-parse-对象字符串转为对象-深拷贝-JSON-stringify-对象转对象字符串" class="headerlink" title="序列化 JSON.parse()对象字符串转为对象(深拷贝)  JSON.stringify()对象转对象字符串"></a>序列化 JSON.parse()对象字符串转为对象(深拷贝)  JSON.stringify()对象转对象字符串</h3><h3 id="深拷贝-双胞胎-浅拷贝-引用-影子"><a href="#深拷贝-双胞胎-浅拷贝-引用-影子" class="headerlink" title="深拷贝(双胞胎) 浅拷贝(引用 影子)"></a>深拷贝(双胞胎) 浅拷贝(引用 影子)</h3><p>1、数组<br>var arr = [‘a’, ‘b’ ,’c’, ‘d’]<br>a)slice() concat()  //返回新的数组<br>var arrCopy = arr.slice(0);<br>var arrCopy = arr.concat();</p>
+<p>2、对象<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>var objCopy = JSON.parse(JSON.stringify(obj))</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/four-md-md/" data-id="cji5fsbm700013wv6a5hxwwod" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cji8wtuwl0001wgv6xnsmq04x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cji5fsbm700043wv65sf3gfr1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cji8wtuxg0003wgv6pd76s20z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +283,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cji5fsbm700033wv6o2xjsijj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cji8wtuwl0002wgv6axeair3o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -309,7 +324,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cji5fsbm700023wv678zuzi4z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cji8wtuw50000wgv6udaqw3ga" class="article-share-link">Share</a>
       
       
     </footer>
@@ -354,7 +369,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cji5fsblr00003wv6q7ctmj6z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cji8wtuyb0004wgv68exzawxr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -395,7 +410,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       <ul>
         
           <li>
-            <a href="/blog/2018/06/07/four-md-md/">four-md.md</a>
+            <a href="/blog/2018/06/10/five-md-md/">属性</a>
           </li>
         
           <li>
