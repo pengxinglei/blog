@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="属性属性添加和获取 ./[]区别.取自身的属性  []可以是变量 属性的添加和获取：var obj = {}obj.name = ‘xm’obj[‘age’] = 20 var obj = {}    obj.name = ‘xz’    obj.a = ‘aa’var a = ‘name’ obj[&amp;apos;a&amp;apos;] //aaa obj[a] //xz =&amp;gt; obj[&amp;apos;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-10T14:14:04.116Z">
+<meta property="og:updated_time" content="2018-06-14T12:49:00.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="属性">
 <meta name="twitter:description" content="属性属性添加和获取 ./[]区别.取自身的属性  []可以是变量 属性的添加和获取：var obj = {}obj.name = ‘xm’obj[‘age’] = 20 var obj = {}    obj.name = ‘xz’    obj.a = ‘aa’var a = ‘name’ obj[&amp;apos;a&amp;apos;] //aaa obj[a] //xz =&amp;gt; obj[&amp;apos;">
@@ -101,11 +101,21 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
 <p>数组还可以用for循环<br>for(var i;i&lt;10;i++){}</p>
 <h3 id="序列化-JSON-parse-对象字符串转为对象-深拷贝-JSON-stringify-对象转对象字符串"><a href="#序列化-JSON-parse-对象字符串转为对象-深拷贝-JSON-stringify-对象转对象字符串" class="headerlink" title="序列化 JSON.parse()对象字符串转为对象(深拷贝)  JSON.stringify()对象转对象字符串"></a>序列化 JSON.parse()对象字符串转为对象(深拷贝)  JSON.stringify()对象转对象字符串</h3><h3 id="深拷贝-双胞胎-浅拷贝-引用-影子"><a href="#深拷贝-双胞胎-浅拷贝-引用-影子" class="headerlink" title="深拷贝(双胞胎) 浅拷贝(引用 影子)"></a>深拷贝(双胞胎) 浅拷贝(引用 影子)</h3><p>1、数组<br>var arr = [‘a’, ‘b’ ,’c’, ‘d’]<br>a)slice() concat()  //返回新的数组<br>var arrCopy = arr.slice(0);<br>var arrCopy = arr.concat();</p>
 <p>2、对象<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>var objCopy = JSON.parse(JSON.stringify(obj))</p>
+<p>###小练习<br>1、数组对象深拷贝<br>var lists = [{name:’xz’,age:16},{name:’xz1’,age:16},{name:’xz2’,age:16}];<br>var listsCopy = JSON.parse(JSON.stringify(lists));<br>listsCopy[1].name = ‘ccc’;<br>listsCopy // {name:’xz’,age:16},{name:’ccc’,age:16},{name:’xz2’,age:16}<br>list // {name:’xz’,age:16},{name:’xz1’,age:16},{name:’xz2’,age:16}</p>
+<p>2、数组对象有X返回1，否则返回2<br>var arr = [{x:1,y:2,z:3},{a:3,b:5,c:6},{l:6,m:8,n:9}];</p>
+<p>方法一：<br>arr.forEach(function(item,index){<br>    for(i in item){<br>        if(i == ‘x’){<br>            console.log(‘1’)<br>        }else{<br>            console.log(‘2’)<br>        }<br>    }<br>})</p>
+<p>方法二：<br>arr.forEach(function(item,index){<br>    if(item.hsaOwnPropety(‘x’)){<br>        console.log(‘1’)<br>    }else{<br>            console.log(‘2’)<br>        }</p>
+<pre><code>//if(item.x !== undefined){
+    console.log(&apos;1&apos;)
+}else{
+        console.log(&apos;2&apos;)
+    }
+</code></pre><p>})</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cji8wtuwl0001wgv6xnsmq04x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjiemez8x00000ov6wlv0r6kw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -113,6 +123,15 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
   
     
 <nav id="article-nav">
+  
+    <a href="/blog/2018/06/14/six-md-md/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          原型
+        
+      </div>
+    </a>
   
   
     <a href="/blog/2018/06/07/three-md-md/" id="article-nav-older" class="article-nav-link-wrap">
@@ -154,6 +173,10 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       <ul>
         
           <li>
+            <a href="/blog/2018/06/14/six-md-md/">原型</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/06/10/five-md-md/">属性</a>
           </li>
         
@@ -167,10 +190,6 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
         
           <li>
             <a href="/blog/2018/06/07/one-md/">MAP</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/06/hello-world/">Hello World</a>
           </li>
         
       </ul>
