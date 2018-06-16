@@ -85,7 +85,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###原型</p>
-<p>JS一切皆对象， 两大类型 原始值+对象<br>函数有区别：函数对象和普通对象<br>函数对象是通过new Function =&gt; typeof =&gt; function,其它的都是普通对象=&gt; typeof =&gt; object,实例属于普通对象<br>function f(){} =&gt; 函数对象 ,var f1 = new f() =&gt; 普通对象<br>每一个函数对象都有一个prototype属性，普通对象没有<br>function f(){} = var f = new Function() 是简写形式<br>prototype下面又有constructor属性 指向当前的函数</p>
+<p>JS一切皆对象， 两大类型 原始值+对象<br>函数有区别：函数对象和普通对象<br>函数对象是通过new Function =&gt; typeof =&gt; function,其它的都是普通对象=&gt; typeof =&gt; object,实例属于普通对象<br>function f(){} =&gt; 函数对象 ,var f1 = new f() =&gt; 普通对象<br>每一个函数对象都有一个prototype属性，普通对象没有<br>function f(){} = var f = new Function() 是简写形式<br>prototype下面又有constructor属性 指向当前的函数<br>对象都有<em>proto</em>属性 指向函数的原型对象</p>
 <p>function Person(){}//空的对象<br>Person.prototype.name = ‘xz’<br>Person.prototype.age = 12<br>var Person1 = new Person()<br>var Person2 = new Person()</p>
 <p>Person    &lt;——–|  ^—&gt;Person prototyp<br>prototype          |–|—-constructor<br>             <strong><strong>_</strong></strong>|   name<br>             |        |   age<br>             |        |<br>Person1      |        |    Person1<br>–proto–  &gt; |        |—&lt;–proto–</p>
 <p>function cat(name,color){//普通函数<br>        return{<br>            name: name,<br>            color: color<br>        }<br>}<br>var cat1 = cat(“大明”,”黄色”)<br>var cat2 = cat(“小明”,”白色”)</p>
@@ -99,11 +99,13 @@
 <p>###区别参数不同 apply 传数组 call 一个一个传</p>
 <p>function Animal(){//动物对象<br>    this.type = ‘动物’<br>}<br>function Cat(name,color){//猫对象<br>        this.name = name<br>        this.color = color<br>}<br>Cat.prototype = new Animal()</p>
 <p>function Animal(){}//动物对象<br>Animal.prototype.type = ‘动物’<br>function Cat(name,color){//猫对象<br>        this.name = name<br>        this.color = color<br>}<br>Cat.prototype = Animal.prototype<br>这种方式省内存，更优，缺点Cat.prototype和Animal。prototype指向了同一个对象</p>
+<p>###apply() 与 call()的参数<br>function Cat(name,color){//猫对象<br>        this.name = name<br>        this.color = color<br>}<br>var cat = new Cat()<br>var o = {}<br>Cat.apply(o,[‘111’,’222’]) //Cat在o对象中执行<br>o.name //111</p>
+<p>function Cat(name,color){//猫对象<br>        this.name = name<br>        this.color = color<br>}<br>var cat = new Cat()<br>var o = {}<br>Cat.call(o,’aaa’,’bbb’) //Cat在o对象中执行<br>o.name //aaa</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjiemez9s00020ov6njxl758b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjih9s24u0001ikv6j9527d54" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,7 +166,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjiemez8x00000ov6wlv0r6kw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjih9s24o0000ikv6oqnecz9x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -214,7 +216,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjiemezan00040ov6yswpcr1g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjih9s25y0005ikv601b0wqa0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -344,7 +346,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjiemezan00030ov6kib4ygvi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjih9s25w0004ikv6i74pg9ft" class="article-share-link">Share</a>
       
       
     </footer>
@@ -385,7 +387,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjiemez9s00010ov6omta0lpw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjih9s24x0002ikv6bh0fmij8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -430,7 +432,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjiemezb300050ov6e5k3dgk6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjih9s25k0003ikv6d4id8ei3" class="article-share-link">Share</a>
       
       
     </footer>
