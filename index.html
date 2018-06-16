@@ -62,6 +62,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-seven-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/16/seven-md-md/" class="article-date">
+  <time datetime="2018-06-16T12:55:41.000Z" itemprop="datePublished">2018-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/16/seven-md-md/">闭包与递归</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##闭包<br>闭包就是能够读取其它函数内部变量的函数<br>JS中每个函数都是个体，它是可以获取父元素的信息，但是父元素不能直接获取子元素内容<br>关键点：是否引入了外部变量</p>
+<p>function a(){<br>    var n = 0;<br>    function add(){<br>        n++<br>        console.log(n)<br>    }<br>    add()<br>}<br>a() //1</p>
+<p>function a(){<br>    this.n=0;<br>    this.add = function(){<br>        this.n++<br>        console.log(this.n)<br>    }<br>}<br>var a1 = new a()<br>a1.add()</p>
+<p>function a(){<br>    var n=0;<br>    this.add = function(){<br>        n++<br>        console.log(n)<br>    }<br>}<br>var a1 = new a()<br>a1.add()</p>
+<p>function a(){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>    add()<br>}<br>a()()</p>
+<p>立即执行函数<br>var a = (function (){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>})()<br>a()</p>
+<p>##闭包传参<br>function f(x){<br>    var i = 0;<br>    return function(){<br>        return x[i++]<br>    }<br>}<br>var abc = f([‘a’,’b’,’c’])<br>abc()//a<br>abc()//b<br>abc()//c<br>abc()//undefined</p>
+<p>var a = (function (){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>})([‘a’,’b’,’c’])<br>a()</p>
+<p>##递归 就是在运行的过程中调用自己</p>
+<p>阶乘<br>function f(n){<br>    if(n &lt;= 1){<br>        return 1;<br>    }else{<br>        return n*f(n-1)<br>    }<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjihh4dnk0000sgv6pf1s11od" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-six-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/06/14/six-md-md/" class="article-date">
@@ -105,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjih9s24u0001ikv6j9527d54" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjihh4dpa0003sgv6oid6tnqc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -166,7 +212,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjih9s24o0000ikv6oqnecz9x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjihh4dog0001sgv6s6kle9hc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +262,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjih9s25y0005ikv601b0wqa0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjihh4dph0005sgv624a700yi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -346,7 +392,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjih9s25w0004ikv6i74pg9ft" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjihh4dpd0004sgv6q77zacae" class="article-share-link">Share</a>
       
       
     </footer>
@@ -387,7 +433,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjih9s24x0002ikv6bh0fmij8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjihh4dok0002sgv6ft77clji" class="article-share-link">Share</a>
       
       
     </footer>
@@ -432,7 +478,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjih9s25k0003ikv6d4id8ei3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjihh4dpl0006sgv6zjzzu7cw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,6 +519,10 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       <ul>
         
           <li>
+            <a href="/blog/2018/06/16/seven-md-md/">闭包与递归</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/06/14/six-md-md/">原型</a>
           </li>
         
@@ -486,10 +536,6 @@ myPromise.prototype.then = function (onResolved, onRejected) {
         
           <li>
             <a href="/blog/2018/06/07/promise/">promise</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/07/one-md/">MAP</a>
           </li>
         
       </ul>
