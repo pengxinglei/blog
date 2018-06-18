@@ -62,6 +62,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-eight-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/18/eight-md-md/" class="article-date">
+  <time datetime="2018-06-18T13:01:26.000Z" itemprop="datePublished">2018-06-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/18/eight-md-md/">this与正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="this-关键字-当前"><a href="#this-关键字-当前" class="headerlink" title="this 关键字 当前"></a>this 关键字 当前</h3><p>this指的调用函数的那个对象</p>
+<p>1、函数中引用<br>var x =1;<br>function f (){<br>    this.x;<br>}<br>console.log(x) //1</p>
+<p>var x =1;<br>function f (){<br>    this.x = 2;<br>}<br>console.log(x) //1</p>
+<p>var x =1;<br>function f (){<br>    this.x = 2;<br>}<br>f();<br>console.log(x) //2</p>
+<p>//没有被绑定的对象，默认this指向window对象<br>var x =1;<br>function f (){<br>    this.x = 2;<br>}<br>function f1 (){<br>    this.x = 3;<br>}<br>f1();<br>f();<br>console.log(x) //2</p>
+<p>//绑定<br>var f = function(){<br>    console.log(this);//o对象<br>}<br>var o ={}<br>o.name = ‘xz’;<br>o.action = f<br>o.action()</p>
+<p>var f = function(){<br>    console.log(this);//window<br>}<br>var o ={}<br>o.name = ‘xz’;<br>o.action = f<br>f()<br>对象中引用this当前对象</p>
+<p>构造函数引用  this<br>function F(name,age){<br>    this.name = name;<br>    this.age = age<br>}<br>var f = new F(‘ABC’,20)<br>f.name//ABC</p>
+<p>function F(name,age){<br>    this.name = name;<br>    this.age = age<br>}<br>var f = new F(‘ABC’,20)<br>f.name = ‘123’<br>f.name//123</p>
+<p>apply,call改变this指向，apply不传参默认为window<br>函数自执行如立即执行函数 this指向window</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>简单的表达式<br>如hi 可以匹配hi，him，等含hi的<br>\b 匹配一个单词的边界 匹配的独立的<br>\B 匹配一个单词的非边界  匹配有单词的<br>\d 匹配数字<br>\D 匹配非数字<br>\w 匹配字母/数字/下划线<br>\W 匹配除字母/数字/下划线以外的<br>^  开始<br>$  结束<br>[] 指定一堆字符中的一个<br>[^] 不匹配这个里面的任意一个</p>
+<ul>
+<li>表示前一个模式可以被重复1次或n次</li>
+</ul>
+<ul>
+<li>表示前一个模式可以被重复0次或n次<br>? 表示前一个模式可以被匹配0次或1次<br>{x} 表示前一个模式可以重复X次<br>{x,y} 表示前一个模式可以重复X到y次<br>{x,} 表示前一个模式可以重复至少X次<br>() 可以指定一堆字符来匹配一个模式 分组<br>| 或者 只能匹配其中一个<br>\转译</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/18/eight-md-md/" data-id="cjike1b3t0000j0v6viib0y4k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-seven-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/06/16/seven-md-md/" class="article-date">
@@ -98,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjihh4dnk0000sgv6pf1s11od" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjike1b580002j0v6bh4pq9je" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjihh4dpa0003sgv6oid6tnqc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjike1b5h0006j0v6dztkzgvx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +265,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjihh4dog0001sgv6s6kle9hc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjike1b5f0005j0v69sv51i2o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,7 +315,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjihh4dph0005sgv624a700yi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjike1b5c0004j0v64cdql148" class="article-share-link">Share</a>
       
       
     </footer>
@@ -392,7 +445,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjihh4dpd0004sgv6q77zacae" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjike1b8c0007j0v60arjjfhf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -433,7 +486,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjihh4dok0002sgv6ft77clji" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjike1b5a0003j0v69lk4z0ek" class="article-share-link">Share</a>
       
       
     </footer>
@@ -478,7 +531,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjihh4dpl0006sgv6zjzzu7cw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjike1b4r0001j0v6nwiyvywy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -519,6 +572,10 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       <ul>
         
           <li>
+            <a href="/blog/2018/06/18/eight-md-md/">this与正则表达式</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/06/16/seven-md-md/">闭包与递归</a>
           </li>
         
@@ -532,10 +589,6 @@ myPromise.prototype.then = function (onResolved, onRejected) {
         
           <li>
             <a href="/blog/2018/06/07/three-md-md/">JS类型</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/07/promise/">promise</a>
           </li>
         
       </ul>
