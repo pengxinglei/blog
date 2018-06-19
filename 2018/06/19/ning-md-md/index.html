@@ -5,19 +5,19 @@
   
 
   
-  <title>闭包与递归 | Hexo</title>
+  <title>json 与 ajax | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##闭包闭包就是能够读取其它函数内部变量的函数JS中每个函数都是个体，它是可以获取父元素的信息，但是父元素不能直接获取子元素内容关键点：是否引入了外部变量 function a(){    var n = 0;    function add(){        n++        console.log(n)    }    add()}a() //1 function a(){    thi">
+  <meta name="description" content="JSONJSON它是1、JSON中对象要求给属性添加双引号2、JSON对象末尾没有分号3、同一个对象中绝对不允许出现两个同名属性 {    “name” : “xz”,    “age” : 20} www.bejson.com 检查JSON的格式JSON.stringify 过滤var data = {    “nama” = “xz”,    “hobby” : [“sing”,”game”]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包与递归">
-<meta property="og:url" content="http://yoursite.com/2018/06/16/seven-md-md/index.html">
+<meta property="og:title" content="json 与 ajax">
+<meta property="og:url" content="http://yoursite.com/2018/06/19/ning-md-md/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##闭包闭包就是能够读取其它函数内部变量的函数JS中每个函数都是个体，它是可以获取父元素的信息，但是父元素不能直接获取子元素内容关键点：是否引入了外部变量 function a(){    var n = 0;    function add(){        n++        console.log(n)    }    add()}a() //1 function a(){    thi">
+<meta property="og:description" content="JSONJSON它是1、JSON中对象要求给属性添加双引号2、JSON对象末尾没有分号3、同一个对象中绝对不允许出现两个同名属性 {    “name” : “xz”,    “age” : 20} www.bejson.com 检查JSON的格式JSON.stringify 过滤var data = {    “nama” = “xz”,    “hobby” : [“sing”,”game”]">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-16T13:37:50.926Z">
+<meta property="og:updated_time" content="2018-06-19T14:52:58.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包与递归">
-<meta name="twitter:description" content="##闭包闭包就是能够读取其它函数内部变量的函数JS中每个函数都是个体，它是可以获取父元素的信息，但是父元素不能直接获取子元素内容关键点：是否引入了外部变量 function a(){    var n = 0;    function add(){        n++        console.log(n)    }    add()}a() //1 function a(){    thi">
+<meta name="twitter:title" content="json 与 ajax">
+<meta name="twitter:description" content="JSONJSON它是1、JSON中对象要求给属性添加双引号2、JSON对象末尾没有分号3、同一个对象中绝对不允许出现两个同名属性 {    “name” : “xz”,    “age” : 20} www.bejson.com 检查JSON的格式JSON.stringify 过滤var data = {    “nama” = “xz”,    “hobby” : [“sing”,”game”]">
   
     <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-seven-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ning-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/06/16/seven-md-md/" class="article-date">
-  <time datetime="2018-06-16T12:55:41.000Z" itemprop="datePublished">2018-06-16</time>
+    <a href="/blog/2018/06/19/ning-md-md/" class="article-date">
+  <time datetime="2018-06-19T13:37:29.000Z" itemprop="datePublished">2018-06-19</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      闭包与递归
+      json 与 ajax
     </h1>
   
 
@@ -86,21 +86,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##闭包<br>闭包就是能够读取其它函数内部变量的函数<br>JS中每个函数都是个体，它是可以获取父元素的信息，但是父元素不能直接获取子元素内容<br>关键点：是否引入了外部变量</p>
-<p>function a(){<br>    var n = 0;<br>    function add(){<br>        n++<br>        console.log(n)<br>    }<br>    add()<br>}<br>a() //1</p>
-<p>function a(){<br>    this.n=0;<br>    this.add = function(){<br>        this.n++<br>        console.log(this.n)<br>    }<br>}<br>var a1 = new a()<br>a1.add()</p>
-<p>function a(){<br>    var n=0;<br>    this.add = function(){<br>        n++<br>        console.log(n)<br>    }<br>}<br>var a1 = new a()<br>a1.add()</p>
-<p>function a(){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>    add()<br>}<br>a()()</p>
-<p>立即执行函数<br>var a = (function (){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>})()<br>a()</p>
-<p>##闭包传参<br>function f(x){<br>    var i = 0;<br>    return function(){<br>        return x[i++]<br>    }<br>}<br>var abc = f([‘a’,’b’,’c’])<br>abc()//a<br>abc()//b<br>abc()//c<br>abc()//undefined</p>
-<p>var a = (function (){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>})([‘a’,’b’,’c’])<br>a()</p>
-<p>##递归 就是在运行的过程中调用自己</p>
-<p>阶乘<br>function f(n){<br>    if(n &lt;= 1){<br>        return 1;<br>    }else{<br>        return n*f(n-1)<br>    }<br>}</p>
+        <h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>JSON它是<br>1、JSON中对象要求给属性添加双引号<br>2、JSON对象末尾没有分号<br>3、同一个对象中绝对不允许出现两个同名属性</p>
+<p>{<br>    “name” : “xz”,<br>    “age” : 20<br>}</p>
+<h2 id="www-bejson-com-检查JSON的格式"><a href="#www-bejson-com-检查JSON的格式" class="headerlink" title="www.bejson.com 检查JSON的格式"></a><a href="http://www.bejson.com" target="_blank" rel="noopener">www.bejson.com</a> 检查JSON的格式</h2><h2 id="JSON-stringify-过滤"><a href="#JSON-stringify-过滤" class="headerlink" title="JSON.stringify 过滤"></a>JSON.stringify 过滤</h2><p>var data = {<br>    “nama” = “xz”,<br>    “hobby” : [“sing”,”game”],<br>    “work” : {<br>        “job” : “web开发”,<br>        “address” : “wuhan”<br>    }<br>}<br>console.log(JSON.stringify(data,[‘name’,’hobby’]));</p>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>XMLHttpRequest  XHR  ActiveXObject (ie5 ie6)<br>1、创建XHR对象<br>2、连接服务器<br>3、发送请求<br>4、接受响应</p>
+<p>var xhr;<br>if(window.XMLHttpRequest){<br>    xhr = new XMLHttpRequest()<br>}else{<br>    xhr = ActiveXObject(“Microsoft,XMLHTTP”) //处理IE5 6兼容性<br>}；<br>xhr.open(‘get’,’url?name=xz&amp;age=20’,true); //请求的类型 true异步 false 同步 get post put delete<br>xhr.send();//xhr.send(DSON.stringify({“name=xz”})) //post请求传入string<br>onreadystatechage = function(){ //readystate变化会触发<br>    if(xhr.readyState == 4 &amp; xhr.status == 200){<br>        console.log(xhr.responseText) //响应的数据<br>    }<br>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjilt67c40007psv6ta9y88is" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/19/ning-md-md/" data-id="cjilt67bt0004psv651o5ogch" class="article-share-link">Share</a>
       
       
     </footer>
@@ -109,19 +104,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2018/06/18/eight-md-md/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          this与正则表达式
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2018/06/14/six-md-md/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2018/06/18/eight-md-md/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">原型</div>
+      <div class="article-nav-title">this与正则表达式</div>
     </a>
   
 </nav>

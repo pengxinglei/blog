@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ning-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/19/ning-md-md/" class="article-date">
+  <time datetime="2018-06-19T13:37:29.000Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/19/ning-md-md/">json 与 ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>JSON它是<br>1、JSON中对象要求给属性添加双引号<br>2、JSON对象末尾没有分号<br>3、同一个对象中绝对不允许出现两个同名属性</p>
+<p>{<br>    “name” : “xz”,<br>    “age” : 20<br>}</p>
+<h2 id="www-bejson-com-检查JSON的格式"><a href="#www-bejson-com-检查JSON的格式" class="headerlink" title="www.bejson.com 检查JSON的格式"></a><a href="http://www.bejson.com" target="_blank" rel="noopener">www.bejson.com</a> 检查JSON的格式</h2><h2 id="JSON-stringify-过滤"><a href="#JSON-stringify-过滤" class="headerlink" title="JSON.stringify 过滤"></a>JSON.stringify 过滤</h2><p>var data = {<br>    “nama” = “xz”,<br>    “hobby” : [“sing”,”game”],<br>    “work” : {<br>        “job” : “web开发”,<br>        “address” : “wuhan”<br>    }<br>}<br>console.log(JSON.stringify(data,[‘name’,’hobby’]));</p>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>XMLHttpRequest  XHR  ActiveXObject (ie5 ie6)<br>1、创建XHR对象<br>2、连接服务器<br>3、发送请求<br>4、接受响应</p>
+<p>var xhr;<br>if(window.XMLHttpRequest){<br>    xhr = new XMLHttpRequest()<br>}else{<br>    xhr = ActiveXObject(“Microsoft,XMLHTTP”) //处理IE5 6兼容性<br>}；<br>xhr.open(‘get’,’url?name=xz&amp;age=20’,true); //请求的类型 true异步 false 同步 get post put delete<br>xhr.send();//xhr.send(DSON.stringify({“name=xz”})) //post请求传入string<br>onreadystatechage = function(){ //readystate变化会触发<br>    if(xhr.readyState == 4 &amp; xhr.status == 200){<br>        console.log(xhr.responseText) //响应的数据<br>    }<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/19/ning-md-md/" data-id="cjilt67bt0004psv651o5ogch" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-eight-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/06/18/eight-md-md/" class="article-date">
@@ -105,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/18/eight-md-md/" data-id="cjike1b3t0000j0v6viib0y4k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/18/eight-md-md/" data-id="cjilt67az0000psv65hszxtnr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjike1b580002j0v6bh4pq9je" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjilt67c40007psv6ta9y88is" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjike1b5h0006j0v6dztkzgvx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjilt67c20006psv6qov34uf9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,7 +306,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjike1b5f0005j0v69sv51i2o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjilt67bj0001psv6t197rakd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -315,7 +356,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjike1b5c0004j0v64cdql148" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjilt67c70008psv6v8ii1lyg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -445,7 +486,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjike1b8c0007j0v60arjjfhf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjilt67c00005psv640c0n23l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -486,7 +527,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjike1b5a0003j0v69lk4z0ek" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjilt67br0003psv6civzhobk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -531,7 +572,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjike1b4r0001j0v6nwiyvywy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjilt67bn0002psv6xfaqp7iv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -572,6 +613,10 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       <ul>
         
           <li>
+            <a href="/blog/2018/06/19/ning-md-md/">json 与 ajax</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/06/18/eight-md-md/">this与正则表达式</a>
           </li>
         
@@ -585,10 +630,6 @@ myPromise.prototype.then = function (onResolved, onRejected) {
         
           <li>
             <a href="/blog/2018/06/10/five-md-md/">属性</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/07/three-md-md/">JS类型</a>
           </li>
         
       </ul>
