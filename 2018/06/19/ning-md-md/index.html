@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="JSONJSON它是1、JSON中对象要求给属性添加双引号2、JSON对象末尾没有分号3、同一个对象中绝对不允许出现两个同名属性 {    “name” : “xz”,    “age” : 20} www.bejson.com 检查JSON的格式JSON.stringify 过滤var data = {    “nama” = “xz”,    “hobby” : [“sing”,”game”]">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-19T14:52:58.147Z">
+<meta property="og:updated_time" content="2018-06-20T13:14:51.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="json 与 ajax">
 <meta name="twitter:description" content="JSONJSON它是1、JSON中对象要求给属性添加双引号2、JSON对象末尾没有分号3、同一个对象中绝对不允许出现两个同名属性 {    “name” : “xz”,    “age” : 20} www.bejson.com 检查JSON的格式JSON.stringify 过滤var data = {    “nama” = “xz”,    “hobby” : [“sing”,”game”]">
@@ -90,12 +90,16 @@
 <p>{<br>    “name” : “xz”,<br>    “age” : 20<br>}</p>
 <h2 id="www-bejson-com-检查JSON的格式"><a href="#www-bejson-com-检查JSON的格式" class="headerlink" title="www.bejson.com 检查JSON的格式"></a><a href="http://www.bejson.com" target="_blank" rel="noopener">www.bejson.com</a> 检查JSON的格式</h2><h2 id="JSON-stringify-过滤"><a href="#JSON-stringify-过滤" class="headerlink" title="JSON.stringify 过滤"></a>JSON.stringify 过滤</h2><p>var data = {<br>    “nama” = “xz”,<br>    “hobby” : [“sing”,”game”],<br>    “work” : {<br>        “job” : “web开发”,<br>        “address” : “wuhan”<br>    }<br>}<br>console.log(JSON.stringify(data,[‘name’,’hobby’]));</p>
 <h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>XMLHttpRequest  XHR  ActiveXObject (ie5 ie6)<br>1、创建XHR对象<br>2、连接服务器<br>3、发送请求<br>4、接受响应</p>
-<p>var xhr;<br>if(window.XMLHttpRequest){<br>    xhr = new XMLHttpRequest()<br>}else{<br>    xhr = ActiveXObject(“Microsoft,XMLHTTP”) //处理IE5 6兼容性<br>}；<br>xhr.open(‘get’,’url?name=xz&amp;age=20’,true); //请求的类型 true异步 false 同步 get post put delete<br>xhr.send();//xhr.send(DSON.stringify({“name=xz”})) //post请求传入string<br>onreadystatechage = function(){ //readystate变化会触发<br>    if(xhr.readyState == 4 &amp; xhr.status == 200){<br>        console.log(xhr.responseText) //响应的数据<br>    }<br>}</p>
+<p>//原生<br>var xhr;<br>if(window.XMLHttpRequest){<br>    xhr = new XMLHttpRequest()<br>}else{<br>    xhr = ActiveXObject(“Microsoft,XMLHTTP”) //处理IE5 6兼容性<br>}；<br>xhr.open(‘get’,’url?name=xz&amp;age=20’,true); //请求的类型 true异步 false 同步 get post put delete<br>xhr.setRequestHeader(“Content-Type”,”application/json”);//data只能是json<br>xhr.send();//xhr.send(DSON.stringify({“name=xz”})) //post请求传入string<br>onreadystatechage = function(){ //readystate变化会触发<br>    if(xhr.readyState == 4 &amp; xhr.status == 200){<br>        console.log(xhr.responseText) //响应的数据<br>    }<br>}</p>
+<p>//jquery<br>$.ajax({<br>    type:’get’,<br>    url:url,<br>    async:true, //async异步  sync同步<br>    data:data, //post<br>    dataType:’json’,<br>    success:function(data){</p>
+<pre><code>},
+error:function(error){}
+</code></pre><p>})</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/ning-md-md/" data-id="cjilt67bt0004psv651o5ogch" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/19/ning-md-md/" data-id="cjj2yybhi0003vwv6sn5ppqok" class="article-share-link">Share</a>
       
       
     </footer>
@@ -103,6 +107,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/blog/2018/07/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
   
     <a href="/blog/2018/06/18/eight-md-md/" id="article-nav-older" class="article-nav-link-wrap">
@@ -131,7 +144,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
     </div>
   </div>
 
@@ -144,6 +157,14 @@
       <ul>
         
           <li>
+            <a href="/blog/2018/07/01/ten-md-md/">设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/01/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/06/19/ning-md-md/">json 与 ajax</a>
           </li>
         
@@ -153,14 +174,6 @@
         
           <li>
             <a href="/blog/2018/06/16/seven-md-md/">闭包与递归</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/14/six-md-md/">原型</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/10/five-md-md/">属性</a>
           </li>
         
       </ul>

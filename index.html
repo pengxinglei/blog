@@ -62,6 +62,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ten-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/07/01/ten-md-md/" class="article-date">
+  <time datetime="2018-07-01T11:02:50.000Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/07/01/ten-md-md/">设计模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h2 id="原始模式"><a href="#原始模式" class="headerlink" title="原始模式"></a>原始模式</h2><p>var person = new Object();<br>person.name = ‘ben’;<br>person.showName = function(){<br>    console.log(this.name)<br>};<br>person.showName();</p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>function person(name,age){<br>    var obj = new Object();<br>    obj.name = name;<br>    obj.age = age;<br>    obj.showName = function(){<br>    return this.name<br>    }<br>    return obj;<br>};<br>var p1 = person(‘a’,20);<br>//缺点：全都是object</p>
+<h2 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h2><p>function Person(name,age){<br>    this.name = name;<br>    this.age = age;<br>    this.showName = function(){<br>    return this.name<br>    }<br>};<br>var p1 = new Person(‘a’,20);<br>//缺点：每次创建实例是都要创建一次方法</p>
+<p>function Person(name,age){<br>    this.name = name;<br>    this.age = age;<br>    this.showName = showName；<br>};<br>function showName(){<br>    return this.name<br>    }<br>var p1 = new Person(‘a’,20);</p>
+<h2 id="混合模式-原型模式-构造函数模式"><a href="#混合模式-原型模式-构造函数模式" class="headerlink" title="混合模式 (原型模式+构造函数模式)"></a>混合模式 (原型模式+构造函数模式)</h2><p>function Person(name,age){<br>    this.name = name;<br>    this.age = age;<br>    this.showName = showName；<br>};<br>person.prototype.shoeName = function (){<br>    return this.name<br>    }<br>var p1 = new Person(‘a’,20);</p>
+<h2 id="单例莫斯-单体模式-只有一个实例"><a href="#单例莫斯-单体模式-只有一个实例" class="headerlink" title="单例莫斯(单体模式)  只有一个实例"></a>单例莫斯(单体模式)  只有一个实例</h2><p><button id="btn">btn</button><br>var creatWindow = (function(){<br>    var div;<br>    return function(){<br>        if(!div){<br>            div = documrnt.creatElement(‘div’);<br>            div.innerHTML = ‘hello world’l;<br>            div.style.display = ‘none’;<br>            document.body.appendChild(div);<br>        }<br>    }<br>})();<br>document.getElementById(‘btn’).onclick = function(){<br>    var str = creatWindow();<br>    div.style.display = ‘block’;<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/01/ten-md-md/" data-id="cjj2yybhi0006vwv6caxyr18q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/07/01/hello-world/" class="article-date">
+  <time datetime="2018-07-01T06:12:14.776Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/07/01/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/01/hello-world/" data-id="cjj2yybhi0004vwv62ir9729o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ning-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/06/19/ning-md-md/" class="article-date">
@@ -88,12 +175,16 @@
 <p>{<br>    “name” : “xz”,<br>    “age” : 20<br>}</p>
 <h2 id="www-bejson-com-检查JSON的格式"><a href="#www-bejson-com-检查JSON的格式" class="headerlink" title="www.bejson.com 检查JSON的格式"></a><a href="http://www.bejson.com" target="_blank" rel="noopener">www.bejson.com</a> 检查JSON的格式</h2><h2 id="JSON-stringify-过滤"><a href="#JSON-stringify-过滤" class="headerlink" title="JSON.stringify 过滤"></a>JSON.stringify 过滤</h2><p>var data = {<br>    “nama” = “xz”,<br>    “hobby” : [“sing”,”game”],<br>    “work” : {<br>        “job” : “web开发”,<br>        “address” : “wuhan”<br>    }<br>}<br>console.log(JSON.stringify(data,[‘name’,’hobby’]));</p>
 <h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>XMLHttpRequest  XHR  ActiveXObject (ie5 ie6)<br>1、创建XHR对象<br>2、连接服务器<br>3、发送请求<br>4、接受响应</p>
-<p>var xhr;<br>if(window.XMLHttpRequest){<br>    xhr = new XMLHttpRequest()<br>}else{<br>    xhr = ActiveXObject(“Microsoft,XMLHTTP”) //处理IE5 6兼容性<br>}；<br>xhr.open(‘get’,’url?name=xz&amp;age=20’,true); //请求的类型 true异步 false 同步 get post put delete<br>xhr.send();//xhr.send(DSON.stringify({“name=xz”})) //post请求传入string<br>onreadystatechage = function(){ //readystate变化会触发<br>    if(xhr.readyState == 4 &amp; xhr.status == 200){<br>        console.log(xhr.responseText) //响应的数据<br>    }<br>}</p>
+<p>//原生<br>var xhr;<br>if(window.XMLHttpRequest){<br>    xhr = new XMLHttpRequest()<br>}else{<br>    xhr = ActiveXObject(“Microsoft,XMLHTTP”) //处理IE5 6兼容性<br>}；<br>xhr.open(‘get’,’url?name=xz&amp;age=20’,true); //请求的类型 true异步 false 同步 get post put delete<br>xhr.setRequestHeader(“Content-Type”,”application/json”);//data只能是json<br>xhr.send();//xhr.send(DSON.stringify({“name=xz”})) //post请求传入string<br>onreadystatechage = function(){ //readystate变化会触发<br>    if(xhr.readyState == 4 &amp; xhr.status == 200){<br>        console.log(xhr.responseText) //响应的数据<br>    }<br>}</p>
+<p>//jquery<br>$.ajax({<br>    type:’get’,<br>    url:url,<br>    async:true, //async异步  sync同步<br>    data:data, //post<br>    dataType:’json’,<br>    success:function(data){</p>
+<pre><code>},
+error:function(error){}
+</code></pre><p>})</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/ning-md-md/" data-id="cjilt67bt0004psv651o5ogch" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/19/ning-md-md/" data-id="cjj2yybhi0003vwv6sn5ppqok" class="article-share-link">Share</a>
       
       
     </footer>
@@ -146,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/18/eight-md-md/" data-id="cjilt67az0000psv65hszxtnr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/18/eight-md-md/" data-id="cjj2yybh30000vwv6nse1d55z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjilt67c40007psv6ta9y88is" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjj2yybhy0007vwv6jpencmq3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjilt67c20006psv6qov34uf9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjj2yybhy0008vwv6pqowvy2s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -306,7 +397,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjilt67bj0001psv6t197rakd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjj2yybhi0001vwv64a8kddq9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -356,7 +447,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjilt67c70008psv6v8ii1lyg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjj2yybhy0009vwv6ii1jeenk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -486,7 +577,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjilt67c00005psv640c0n23l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjj2yybhi0005vwv6ozbweh2i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,52 +618,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjilt67br0003psv6civzhobk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/06/06/hello-world/" class="article-date">
-  <time datetime="2018-06-06T15:55:52.835Z" itemprop="datePublished">2018-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/06/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/06/hello-world/" data-id="cjilt67bn0002psv6xfaqp7iv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjj2yybhi0002vwv6a715ikbo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -600,7 +646,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
     </div>
   </div>
 
@@ -613,6 +659,14 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       <ul>
         
           <li>
+            <a href="/blog/2018/07/01/ten-md-md/">设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/01/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/06/19/ning-md-md/">json 与 ajax</a>
           </li>
         
@@ -622,14 +676,6 @@ myPromise.prototype.then = function (onResolved, onRejected) {
         
           <li>
             <a href="/blog/2018/06/16/seven-md-md/">闭包与递归</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/14/six-md-md/">原型</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/06/10/five-md-md/">属性</a>
           </li>
         
       </ul>
