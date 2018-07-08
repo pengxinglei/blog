@@ -85,24 +85,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="v-for-遍历"><a href="#v-for-遍历" class="headerlink" title="v-for 遍历"></a>v-for 遍历</h2><p>数组的时候 v=&gt;value i=&gt;index<br>对象的时候 v=&gt;value i=&gt;键(key)<br>数组对象的时候 v=&gt;value(obj) i=&gt;index</p>
-<h2 id="v-on-事件-v-on-click-简写-click"><a href="#v-on-事件-v-on-click-简写-click" class="headerlink" title="v-on 事件 v-on:click 简写@click"></a>v-on 事件 v-on:click 简写@click</h2><h2 id="v-show-满足条件显示"><a href="#v-show-满足条件显示" class="headerlink" title="v-show 满足条件显示"></a>v-show 满足条件显示</h2><h2 id="v-if-v-else-v-else-if"><a href="#v-if-v-else-v-else-if" class="headerlink" title="v-if  v-else  v-else-if"></a>v-if  v-else  v-else-if</h2><h2 id="v-if-不占内存，不满足S就不存在"><a href="#v-if-不占内存，不满足S就不存在" class="headerlink" title="v-if 不占内存，不满足S就不存在"></a>v-if 不占内存，不满足S就不存在</h2><h2 id="v-bind-v-bind-class-class-src-title-type"><a href="#v-bind-v-bind-class-class-src-title-type" class="headerlink" title="v-bind v-bind:class  :class  src title  type"></a>v-bind v-bind:class  :class  src title  type</h2><p>new Vue({<br>    el:’#my’,<br>    data:{<br>        age:18,<br>        flag:true,<br>        a1:”a1”,<br>        a2:”a2”<br>    },<br>    methods:{<br>        click:funtion(){<br>            this.age=20;<br>        },<br>        mouseover:funtion(){<br>            this.age=21;<br>        },<br>        mouseout:funtion(){<br>            this.age=22;<br>        }<br>    }<br>})</p>
-<p><style><br>.a1{<br>    color:red;<br>}<br></style></p>
-<p><button v-on:click="click1">click1</button> //点击</p>
-<p><button v-on:mouseover="mouseover">mouseover</button>//移入</p>
-<p><button v-on:mouseout="mouseout">mouseout</button>//移出</p>
-<p><button v-on:mouseout="mouseout">mouseout</button>//移入移出</p>
-<p><button v-on:dblclick="mouseout">dblclick</button>//双击</p>
-<p><button v-show="flag">按钮</button></p>
-<p><button v-show="age == 18"></button></p>
-<p></p><p v-if="age==18"></p><p></p>
-<p></p><p v-else-if="age==20"></p><p></p>
-<p></p><p v-else="">not</p><p></p>
-<p></p><p v-if="flag?age=18:age=20"></p><br><img v-bind:src="url" :title="title"><br>//引用一个样式<br><img :src="flag?url1:url2"><br>//引用多个样式<p></p>
-<div :class="[a1,a2]">123456789</div><br>//引用json样式  {‘样式’：条件} 样式不加引号就是变量<br><div :class="{'a1':flag}">123456789</div><br><div :class="{'a1':flag,'a1':!flag}">123456789</div><br>//style 属性带——的要采用驼峰式font-size =&gt; fontSize<br><div :style="{color:'#f60',fontSize:'13px'}">123456789</div><br><div :style="a1">123456789</div><br><div :style="[a1,a2]">123456789</div><br><div :style="{flag?a1:a2}">123456789</div>
+<h2 id="v-on-事件-v-on-click-简写-click"><a href="#v-on-事件-v-on-click-简写-click" class="headerlink" title="v-on 事件 v-on:click 简写@click"></a>v-on 事件 v-on:click 简写@click</h2><h2 id="v-show-满足条件显示"><a href="#v-show-满足条件显示" class="headerlink" title="v-show 满足条件显示"></a>v-show 满足条件显示</h2><h2 id="v-if-v-else-v-else-if"><a href="#v-if-v-else-v-else-if" class="headerlink" title="v-if  v-else  v-else-if"></a>v-if  v-else  v-else-if</h2><h2 id="v-if-不占内存，不满足S就不存在"><a href="#v-if-不占内存，不满足S就不存在" class="headerlink" title="v-if 不占内存，不满足S就不存在"></a>v-if 不占内存，不满足S就不存在</h2><h2 id="v-bind-v-bind-class-class-src-title-type"><a href="#v-bind-v-bind-class-class-src-title-type" class="headerlink" title="v-bind v-bind:class  :class  src title  type"></a>v-bind v-bind:class  :class  src title  type</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:&apos;#my&apos;,</span><br><span class="line">    data:&#123;</span><br><span class="line">        age:18,</span><br><span class="line">        flag:true,</span><br><span class="line">        a1:&quot;a1&quot;,</span><br><span class="line">        a2:&quot;a2&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        click:funtion()&#123;</span><br><span class="line">            this.age=20;</span><br><span class="line">        &#125;,</span><br><span class="line">        mouseover:funtion()&#123;</span><br><span class="line">            this.age=21;</span><br><span class="line">        &#125;,</span><br><span class="line">        mouseout:funtion()&#123;</span><br><span class="line">            this.age=22;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.a1&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;button v-on:click=&quot;click1&quot;&gt;click1&lt;/button&gt; //点击</span><br><span class="line">&lt;button v-on:mouseover=&quot;mouseover&quot;&gt;mouseover&lt;/button&gt;//移入</span><br><span class="line">&lt;button v-on:mouseout=&quot;mouseout&quot;&gt;mouseout&lt;/button&gt;//移出</span><br><span class="line">&lt;button v-on:mouseout=&quot;mouseout&quot; v-on:mouseout=&quot;mouseout&quot;&gt;mouseout&lt;/button&gt;//移入移出</span><br><span class="line">&lt;button v-on:dblclick=&quot;mouseout&quot;&gt;dblclick&lt;/button&gt;//双击</span><br><span class="line">&lt;button v-show=&quot;flag&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">&lt;button v-show=&quot;age == 18&quot;&gt;&#123;&#123;age&#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;p v-if=&quot;age==18&quot;&gt;&#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p v-else-if=&quot;age==20&quot;&gt;&#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p v-else&gt;not&lt;/p&gt;</span><br><span class="line">&lt;p v-if=&quot;flag?age=18:age=20&quot;&gt;&#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;img v-bind:src=&quot;url&quot; :title=&quot;title&quot;&gt;</span><br><span class="line">//引用一个样式</span><br><span class="line">&lt;img :src=&quot;flag?url1:url2&quot;&gt;</span><br><span class="line">//引用多个样式</span><br><span class="line">&lt;div :class=&quot;[a1,a2]&quot;&gt;123456789&lt;/div&gt;</span><br><span class="line">//引用json样式  &#123;&apos;样式&apos;：条件&#125; 样式不加引号就是变量</span><br><span class="line">&lt;div :class=&quot;&#123;&apos;a1&apos;:flag&#125;&quot;&gt;123456789&lt;/div&gt;</span><br><span class="line">&lt;div :class=&quot;&#123;&apos;a1&apos;:flag,&apos;a1&apos;:!flag&#125;&quot;&gt;123456789&lt;/div&gt;</span><br><span class="line">//style 属性带——的要采用驼峰式font-size =&gt; fontSize</span><br><span class="line">&lt;div :style=&quot;&#123;color:&apos;#f60&apos;,fontSize:&apos;13px&apos;&#125;&quot;&gt;123456789&lt;/div&gt;</span><br><span class="line">&lt;div :style=&quot;a1&quot;&gt;123456789&lt;/div&gt;</span><br><span class="line">&lt;div :style=&quot;[a1,a2]&quot;&gt;123456789&lt;/div&gt;</span><br><span class="line">&lt;div :style=&quot;&#123;flag?a1:a2&#125;&quot;&gt;123456789&lt;/div&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/06/28-md-md/" data-id="cjjckfxsm000gw8v6clujrmhs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/06/28-md-md/" data-id="cjjcl0fem000h40v6mjjowkhn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,36 +124,7 @@
         <h3 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h3><h2 id="是一套渐进式框架-数据驱动"><a href="#是一套渐进式框架-数据驱动" class="headerlink" title="是一套渐进式框架  数据驱动"></a>是一套渐进式框架  数据驱动</h2><p>vue  是尤雨溪个人开发的<br>jquery是 操作dom</p>
 <p>m model 模型 （当前视图可用的数据）<br>v view 视图1  渲染html<br>c controller  控制器   处理/加工model<br>vm  双向数据绑定</p>
 <p>mvc<br>mvvm模式</p>
-<h2 id="vue属于mvvm模式-单应用界面"><a href="#vue属于mvvm模式-单应用界面" class="headerlink" title="vue属于mvvm模式  单应用界面"></a>vue属于mvvm模式  单应用界面</h2><h2 id="vue写法"><a href="#vue写法" class="headerlink" title="vue写法"></a>vue写法</h2><p>new Vue{(<br>    el:’#my’,  //挂载元素 element  vue1.0可以挂载在body上，2.0不可以<br>    data{ //数据<br>        name:’xz’,<br>        list:{name：’xz’}<br>    },<br>    mounted:function(){//生命周期  挂载完成</p>
-<pre><code>},
-methods:{//方法
-    add:function(name){//可以不写chan
-        if(name == &apos; &apos;) return;
-        this.lists.push({name:name}); //注意这里要加this  数据追加到最前面unshift()
-        this.name=&apos;&apos;;
-    },
-    del:function(index){
-        this.lists.splice(index,1);//删除当前  index位置  1是个数
-    }
-},
-filters{//过滤器
-    stateFilter:function(type){
-        switch(type){
-            case &apos;0&apos;:
-                return &apos;未采购’;
-            case &apos;1&apos;:
-                return &apos;采购中’;
-            case &apos;2&apos;:
-                return &apos;已采购’;
-            default:
-                return &apos;未采购’;
-        }
-    }
-}
-</code></pre><p>)}</p>
-<blockquote>
-<p>“1”表达式 输出数据</p>
-</blockquote>
+<h2 id="vue属于mvvm模式-单应用界面"><a href="#vue属于mvvm模式-单应用界面" class="headerlink" title="vue属于mvvm模式  单应用界面"></a>vue属于mvvm模式  单应用界面</h2><h2 id="vue写法"><a href="#vue写法" class="headerlink" title="vue写法"></a>vue写法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">new Vue&#123;(</span><br><span class="line">    el:&apos;#my&apos;,  //挂载元素 element  vue1.0可以挂载在body上，2.0不可以</span><br><span class="line">    data&#123; //数据</span><br><span class="line">        name:&apos;xz&apos;,</span><br><span class="line">        list:&#123;name：&apos;xz&apos;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted:function()&#123;//生命周期  挂载完成</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;//方法</span><br><span class="line">        add:function(name)&#123;//可以不写chan</span><br><span class="line">            if(name == &apos; &apos;) return;</span><br><span class="line">            this.lists.push(&#123;name:name&#125;); //注意这里要加this  数据追加到最前面unshift()</span><br><span class="line">            this.name=&apos;&apos;;</span><br><span class="line">        &#125;,</span><br><span class="line">        del:function(index)&#123;</span><br><span class="line">            this.lists.splice(index,1);//删除当前  index位置  1是个数</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    filters&#123;//过滤器</span><br><span class="line">        stateFilter:function(type)&#123;</span><br><span class="line">            switch(type)&#123;</span><br><span class="line">                case &apos;0&apos;:</span><br><span class="line">                    return &apos;未采购’;</span><br><span class="line">                case &apos;1&apos;:</span><br><span class="line">                    return &apos;采购中’;</span><br><span class="line">                case &apos;2&apos;:</span><br><span class="line">                    return &apos;已采购’;</span><br><span class="line">                default:</span><br><span class="line">                    return &apos;未采购’;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">)&#125;</span><br><span class="line"></span><br><span class="line">&#123;&#123;name&#125;&#125;表达式 输出数据</span><br></pre></td></tr></table></figure>
 <h1 id="指令-用来扩展html标签-v-特殊特性"><a href="#指令-用来扩展html标签-v-特殊特性" class="headerlink" title="指令  用来扩展html标签  v- 特殊特性"></a>指令  用来扩展html标签  v- 特殊特性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">v-for 循环</span><br><span class="line">写法：</span><br><span class="line">一 、v-for = “v in arr”  //v是变量 可以随便起名</span><br><span class="line">二 、v-for = “（a，i） in arr”  //i是index</span><br><span class="line"></span><br><span class="line">v-on:click 指定事件  缩写 @click</span><br><span class="line">写法：</span><br><span class="line">v-on:click = “add(name)” //add()也可以写成add</span><br><span class="line">@click = “add(name)” //add()也可以写成add</span><br><span class="line"></span><br><span class="line">v-model  来实现view同步  表单的值</span><br><span class="line">写法：</span><br><span class="line">v-model=“name”</span><br><span class="line"></span><br><span class="line">v-bind 属性绑定</span><br><span class="line">写法：</span><br><span class="line">v-bind:class  缩写 :class</span><br><span class="line">可以添加判断 :class=&quot;&#123;&apos;active&apos;:index == num&#125;&quot; 满足条件添加active</span><br><span class="line"></span><br><span class="line">v-show 显示/隐藏 </span><br><span class="line">v-show=&quot;index==num&quot; 满足条件显示</span><br></pre></td></tr></table></figure>
 <h2 id="过滤器-但过多的过滤器会影响性能"><a href="#过滤器-但过多的过滤器会影响性能" class="headerlink" title="过滤器 但过多的过滤器会影响性能"></a>过滤器 但过多的过滤器会影响性能</h2><p>写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\&#123;\&#123;list.state | 1\&#125;\&#125; //属性 | 方法</span><br></pre></td></tr></table></figure></p>
 <h2 id="用vue写个简单的列表dom"><a href="#用vue写个简单的列表dom" class="headerlink" title="用vue写个简单的列表dom"></a>用vue写个简单的列表dom</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">new Vue&#123;(</span><br><span class="line">    el:&apos;#my&apos;, </span><br><span class="line">    data&#123; //数据</span><br><span class="line">        name:&apos;xz&apos;,</span><br><span class="line">        list:[&#123;title：&apos;在线咨询&apos;,icon:&apos;icon1&apos;&#125;,</span><br><span class="line">              &#123;title：&apos;在线咨询&apos;,icon:&apos;icon2&apos;&#125;,</span><br><span class="line">              &#123;title：&apos;在线咨询&apos;,icon:&apos;icon3&apos;&#125;]</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\&lt;div v-for=&quot;list in lists&quot;&gt;&lt;i :class=&quot;list.icon&quot;&gt;&lt;/i&gt;&lt;label&gt;\&#123;\&#123;list.title\&#125;\&#125;&lt;/label&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
@@ -174,7 +132,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/27-md-md/" data-id="cjjckfxso000hw8v6l6hp48nv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/27-md-md/" data-id="cjjcl0fe7000g40v6eojlmreq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -210,7 +168,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/26-md-md/" data-id="cjjckfxsk000fw8v6i0mwvwae" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/26-md-md/" data-id="cjjcl0fe7000f40v6tub6tmi9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,7 +204,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/25-md-md/" data-id="cjjckfxsi000ew8v6w7ej843j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/25-md-md/" data-id="cjjcl0fe7000e40v6u6k4s98b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +240,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/24-md-md/" data-id="cjjckfxsf000dw8v688ihj360" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/24-md-md/" data-id="cjjcl0fe7000d40v6kyclajao" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,7 +276,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/23-md-md/" data-id="cjjckfxsb000cw8v6dkjz5hww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/23-md-md/" data-id="cjjcl0fe7000c40v6zf9bfn0r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -354,7 +312,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/22-md-md/" data-id="cjjckfxs8000bw8v6icmrqhzp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/22-md-md/" data-id="cjjcl0fe7000b40v6mdf14kjc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -390,7 +348,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/21-md-md/" data-id="cjjckfxs5000aw8v63g9mhn9s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/21-md-md/" data-id="cjjcl0fdr000a40v62wxfg5og" class="article-share-link">Share</a>
       
       
     </footer>
@@ -426,7 +384,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/20-md-md/" data-id="cjjckfxs30009w8v6eup7x3in" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/20-md-md/" data-id="cjjcl0fdr000940v63rc139b8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -462,7 +420,7 @@ filters{//过滤器
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/19-md-md/" data-id="cjjckfxs10008w8v694dse8ol" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/19-md-md/" data-id="cjjcl0fdr000840v6kt7h1xxh" class="article-share-link">Share</a>
       
       
     </footer>
