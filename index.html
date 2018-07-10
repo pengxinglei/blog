@@ -62,6 +62,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-31-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/07/10/31-md-md/" class="article-date">
+  <time datetime="2018-07-10T14:48:49.000Z" itemprop="datePublished">2018-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/07/10/31-md-md/">组件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="组件-是扩展HYML元素-封装复用的"><a href="#组件-是扩展HYML元素-封装复用的" class="headerlink" title="组件 是扩展HYML元素  封装复用的"></a>组件 是扩展HYML元素  封装复用的</h2><h2 id="组件创建的方式3种"><a href="#组件创建的方式3种" class="headerlink" title="组件创建的方式3种"></a>组件创建的方式3种</h2><p>1、先创建组件构造器 在创建组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var myComponent = Vue.extend(&#123;</span><br><span class="line">    template:&apos;&lt;h2&gt;hello&lt;/h2&gt;&apos;</span><br><span class="line">&#125;);</span><br><span class="line">Vue.component(&apos;hello&apos;,myComponent);</span><br><span class="line">new Vue(&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line">&lt;div id=&quot;my&quot;&gt;</span><br><span class="line">    &lt;hello&gt;&lt;/hello&gt;</span><br><span class="line">&lt;div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-hello&apos;,&#123;</span><br><span class="line">    template:&apos;&lt;h2&gt;hello&lt;/h2&gt;&apos;</span><br><span class="line">&#125;);</span><br><span class="line">new Vue(&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line">&lt;div id=&quot;my&quot;&gt;</span><br><span class="line">    &lt;my-hello&gt;&lt;/my-hello&gt;</span><br><span class="line">&lt;div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3、局部<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    ...</span><br><span class="line">    components:&#123;</span><br><span class="line">        &apos;my-home&apos;:&#123;</span><br><span class="line">            template:&apos;&lt;h2&gt;hello&lt;/h2&gt;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;div id=&quot;my&quot;&gt;</span><br><span class="line">    &lt;my-home&gt;&lt;/my-home&gt;</span><br><span class="line">&lt;div&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">    ...</span><br><span class="line">    components:&#123;</span><br><span class="line">        &apos;my-home&apos;:&#123;</span><br><span class="line">            template:&apos;&lt;h2&gt;hello&lt;/h2&gt;&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        &apos;my-home1&apos;:&#123;</span><br><span class="line">            template:&apos;#myHome&apos;,</span><br><span class="line">            data:function()&#123;//数据写这里</span><br><span class="line">                return&#123;</span><br><span class="line">                    title:&apos; title&apos;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">//模板</span><br><span class="line">&lt;template id=&quot;myHome&quot;&gt;</span><br><span class="line">    &lt;div&gt;//必须写在div里</span><br><span class="line">        &lt;p&gt;&#123;&#123;title&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;123&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;div id=&quot;my&quot;&gt;</span><br><span class="line">    &lt;my-home&gt;&lt;/my-home&gt;</span><br><span class="line">&lt;div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="tab组件例子"><a href="#tab组件例子" class="headerlink" title="tab组件例子"></a>tab组件例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">    ...</span><br><span class="line">    components:&#123;</span><br><span class="line">        &apos;my-tab&apos;：&#123;</span><br><span class="line">            template:&apos;#myTab&apos;,</span><br><span class="line">            data:function()&#123;</span><br><span class="line">                return&#123;</span><br><span class="line">                    cur:0,</span><br><span class="line">                    tabTitle:[&apos;标题一&apos;,&apos;标题二&apos;,&apos;标题三&apos;,&apos;标题四&apos;],</span><br><span class="line">                    tabMain:[&apos;内容一&apos;,&apos;内容二&apos;,&apos;内容三&apos;,&apos;内容四&apos;]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">//tab模板</span><br><span class="line">&lt;template id=&quot;myHome&quot;&gt;</span><br><span class="line">    &lt;div&gt;//必须写在div里</span><br><span class="line">       &lt;ul class=&quot;tab-tit&quot;&gt;</span><br><span class="line">        &lt;li v-for=&quot;(title,index) in tabTitle&quot; @click=&quot;cur=index&quot; :class=&quot;&#123;active:cur==index&#125;&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/li&gt;</span><br><span class="line">       </span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;div class=&quot;tab-con&quot;&gt;</span><br><span class="line">        &lt;div v-for=&quot;(m,index) in tabMain&quot; v-show=&quot;cur==index&quot;&gt;&#123;&#123;m&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;div id=&quot;my&quot;&gt;</span><br><span class="line">    &lt;my-tab&gt;&lt;/my-tab&gt;</span><br><span class="line">&lt;div&gt;</span><br></pre></td></tr></table></figure>
+<p>组件里面有依赖 如-ul li-  -ol li-等要在模板里面写如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id=&quot;myTre&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">       &lt;tbody&gt;</span><br><span class="line">            &lt;tr&gt;&lt;/tr&gt;</span><br><span class="line">       &lt;/tbody&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;my-tre&gt;&lt;/my-tre&gt;</span><br><span class="line"></span><br><span class="line">&lt;template id=&quot;myTre&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;my-tre&gt;&lt;/my-tre&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//如果在外面写了就这样解决  判断id是否相符</span><br><span class="line">&lt;template id=&quot;myTre&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">       &lt;tbody&gt;</span><br><span class="line">            &lt;tr&gt;&lt;/tr&gt;</span><br><span class="line">       &lt;/tbody&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tbody is=&quot;myTr&quot;&gt;&lt;/tbody&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="插座式"><a href="#插座式" class="headerlink" title="插座式"></a>插座式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id=&quot;myTre&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">       &lt;p&gt;123&lt;/p&gt;</span><br><span class="line">       &lt;slot name=&quot;s1&quot;&gt;&lt;slot&gt;</span><br><span class="line">       &lt;slot name=&quot;s2&quot;&gt;&lt;slot&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;my-tre&gt;</span><br><span class="line">    &lt;ul slot=&quot;s1&quot;&gt;</span><br><span class="line">        &lt;li&gt;s1&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ul slot=&quot;s2&quot;&gt;</span><br><span class="line">        &lt;li&gt;s2&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/my-tre&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="动态模板"><a href="#动态模板" class="headerlink" title="动态模板"></a>动态模板</h2><p>点击那个显示那个内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    date:&#123;</span><br><span class="line">        flag:&apos;my-tab&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;button @click=&quot;flag=&apos;my-tab&apos;&quot;&gt;my-tab&lt;/button&gt;</span><br><span class="line">&lt;button @click=&quot;flag=&apos;my-tre&apos;&quot;&gt;my-tre&lt;/button&gt;</span><br><span class="line">&lt;my-tab v-if=&quot;flag==&apos;my-tab&quot;&gt;&lt;/my-tab&gt;</span><br><span class="line">&lt;my-tre v-if=&quot;flag==&apos;my-tre&quot;&gt;&lt;/my-tre&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/10/31-md-md/" data-id="cjjfv40r4000l54v6vg2tncjl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-30-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/07/08/30-md-md/" class="article-date">
@@ -88,11 +133,13 @@
 <h2 id="表单有个change事件-change"><a href="#表单有个change事件-change" class="headerlink" title="表单有个change事件 @change"></a>表单有个change事件 @change</h2><h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><h2 id="v-keydown"><a href="#v-keydown" class="headerlink" title="v-keydown"></a>v-keydown</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;my&quot;&gt;</span><br><span class="line">    &lt;button @keydown.13=&quot;key()&quot;&gt;button&lt;/button&gt;</span><br><span class="line">    &lt;button @keydown.enter=&quot;key()&quot;&gt;enter&lt;/button&gt;</span><br><span class="line">    //组合键 alt+c</span><br><span class="line">    &lt;button @keydown.alt.c=&quot;key()&quot;&gt;alt+c&lt;/button&gt;</span><br><span class="line">    &lt;button @keydown.alt.67=&quot;key()&quot;&gt;alt+c&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="event对象-event对象要传参-如show-event"><a href="#event对象-event对象要传参-如show-event" class="headerlink" title="event对象 event对象要传参 如show($event)"></a>event对象 event对象要传参 如show($event)</h2><p>event.type 触发事件类型<br>event.target 事件的元素<br>event.stopPropagetion() 阻止事件冒泡<br>//冒泡 事件捕获<br>window=&gt;text 捕获过程  text =&gt; window 冒泡过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div @click=&quot;show($event)&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div @click.stop=&quot;show($event)&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>window =&gt; document =&gt;body =&gt;div =&gt; (text) =&gt;div =&gt;body =&gt;document =&gt;window<br>event.preventDefautl() 取消事件的默认行为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; @click=&quot;open($event&quot;&gt;open&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; @click.prevent=&quot;open($event&quot;&gt;open&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">//只执行一次</span><br><span class="line">&lt;button @click.once=&quot;once()&quot;&gt;once&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="处理时间"><a href="#处理时间" class="headerlink" title="处理时间"></a>处理时间</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curTime:Date.new()</span><br><span class="line">//过滤器方法</span><br><span class="line">date:function(date)&#123;</span><br><span class="line">    var d = new Date(date);</span><br><span class="line">    return d.getFulYear()+&apos;-&apos;+(d.getMonth()+1)+&apos;-&apos;+d.getDate();</span><br><span class="line">&#125;</span><br><span class="line">&lt;div&gt;&#123;&#123;curTime | date&#125;&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.tool.chinaz.com" target="_blank" rel="noopener">www.tool.chinaz.com</a></p>
+<h2 id="处理时间搓"><a href="#处理时间搓" class="headerlink" title="处理时间搓"></a>处理时间搓</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curTime:&apos;1525918210&apos;</span><br><span class="line">//过滤器方法</span><br><span class="line">date:function(date)&#123;</span><br><span class="line">    var d = new Date(date*1000);</span><br><span class="line">    return d.getFulYear()+&apos;-&apos;+(d.getMonth()+1)+&apos;-&apos;+d.getDate();</span><br><span class="line">&#125;</span><br><span class="line">&lt;div&gt;&#123;&#123;curTime | date&#125;&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/08/30-md-md/" data-id="cjjczwvag000jtov6g876kclq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/08/30-md-md/" data-id="cjjfv40qr000f54v6y6fd2es8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/08/29-md-md/" data-id="cjjczwva0000itov6es26o8nr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/08/29-md-md/" data-id="cjjfv40qy000i54v65up36ir4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/06/28-md-md/" data-id="cjjczwva0000htov6mw9sfmhe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/06/28-md-md/" data-id="cjjfv40se000u54v6ok3i8h8x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/27-md-md/" data-id="cjjczwva0000gtov6eo11rw06" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/27-md-md/" data-id="cjjfv40s4000r54v6s65yja8c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -247,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/26-md-md/" data-id="cjjczwva0000ftov6tzzbaah8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/26-md-md/" data-id="cjjfv40qu000g54v60nox9vyq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/25-md-md/" data-id="cjjczwva0000etov6owv5rkyf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/25-md-md/" data-id="cjjfv40qo000e54v6k2d7uya2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/24-md-md/" data-id="cjjczwva0000dtov6l3p5cy4u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/24-md-md/" data-id="cjjfv40qm000d54v6i6n09xfn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -355,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/23-md-md/" data-id="cjjczwva0000ctov62qm5rs5t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/23-md-md/" data-id="cjjfv40qi000c54v6vcw18478" class="article-share-link">Share</a>
       
       
     </footer>
@@ -391,43 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/22-md-md/" data-id="cjjczwv9l000btov651o7cb7n" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-21-md-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/07/05/21-md-md/" class="article-date">
-  <time datetime="2018-07-05T04:59:47.000Z" itemprop="datePublished">2018-07-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/07/05/21-md-md/">21-md.md</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/21-md-md/" data-id="cjjczwv9l000atov61vdfwcdc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/22-md-md/" data-id="cjjfv40qf000b54v6luttwvs2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,7 +452,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -473,6 +484,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2018/07/10/31-md-md/">组件</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/07/08/30-md-md/">vue</a>
           </li>
         
@@ -486,10 +501,6 @@
         
           <li>
             <a href="/blog/2018/07/05/27-md-md/">VUE</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/05/26-md-md/">26-md.md</a>
           </li>
         
       </ul>
