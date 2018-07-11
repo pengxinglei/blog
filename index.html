@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/07/11/32-md-md/">32-md.md</a>
+      <a class="article-title" href="/blog/2018/07/11/32-md-md/">组件传参</a>
     </h1>
   
 
@@ -84,11 +84,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="父到子传参-props"><a href="#父到子传参-props" class="headerlink" title="父到子传参 props"></a>父到子传参 props</h2><p>Vue.component(‘my-hello’,{<br>    template:’</p><h2>hello</h2>‘,<br>    data:function(){<br>        return{<br>            msg:’123’<br>        }<br>    },<br>    props:[‘num’]  //父的值传到子<br>});<p></p>
+<p>new Vue({<br>    el:’#my’,<br>    data:{<br>        value:’12346’,<br>        msg:’hello’,<br>        name:’sonnia’,<br>        arr:[1,2,3]<br>    }<br>})</p>
+<div id="my"><br><my-hello v-for="a in arr" :num="a"></my-hello><br><br></div>
+
+
+<h2 id="子到父传参-emit-‘abc’-传参-v-on-abc-””"><a href="#子到父传参-emit-‘abc’-传参-v-on-abc-””" class="headerlink" title="子到父传参 $emit(‘abc’,传参) v-on:abc=””"></a>子到父传参 $emit(‘abc’,传参) v-on:abc=””</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/11/32-md-md/" data-id="cjjgmq095000hwsv6cdlmv813" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/11/32-md-md/" data-id="cjjgp61dj000k3wv60u1qxdi8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/10/31-md-md/" data-id="cjjgmq092000gwsv6m56mcpwl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/10/31-md-md/" data-id="cjjgp61dp000m3wv6up58azun" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/08/30-md-md/" data-id="cjjgmq0a0000rwsv6xklzmz07" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/08/30-md-md/" data-id="cjjgp61hq000n3wv62zajvcb4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/08/29-md-md/" data-id="cjjgmq09x000qwsv6fxdob1if" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/08/29-md-md/" data-id="cjjgp61dd000i3wv6n6o877uq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -252,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/06/28-md-md/" data-id="cjjgmq09d000kwsv6m92my0iw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/06/28-md-md/" data-id="cjjgp61da000h3wv6gdeptzpw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -295,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/27-md-md/" data-id="cjjgmq0al000uwsv6i5sc6il0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/27-md-md/" data-id="cjjgp60iy000g3wv6w2cw12qi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/26-md-md/" data-id="cjjgmq08z000fwsv68fxng7xt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/26-md-md/" data-id="cjjgp60iv000f3wv6sme1bzdt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -367,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/25-md-md/" data-id="cjjgmq08x000ewsv6svgwqtei" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/25-md-md/" data-id="cjjgp60ir000e3wv6dip276sd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -403,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/24-md-md/" data-id="cjjgmq08u000dwsv64xy0a6lh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/24-md-md/" data-id="cjjgp60ip000d3wv6o1uj6jao" class="article-share-link">Share</a>
       
       
     </footer>
@@ -439,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/23-md-md/" data-id="cjjgmq08c0009wsv6omt25q76" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/23-md-md/" data-id="cjjgp60im000c3wv685whd26g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -485,7 +490,7 @@
       <ul>
         
           <li>
-            <a href="/blog/2018/07/11/32-md-md/">32-md.md</a>
+            <a href="/blog/2018/07/11/32-md-md/">组件传参</a>
           </li>
         
           <li>

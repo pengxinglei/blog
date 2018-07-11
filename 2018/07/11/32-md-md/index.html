@@ -5,16 +5,19 @@
   
 
   
-  <title>32-md.md | Hexo</title>
+  <title>组件传参 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="32-md.md">
+  <meta name="description" content="父到子传参 propsVue.component(‘my-hello’,{    template:’hello‘,    data:function(){        return{            msg:’123’        }    },    props:[‘num’]  //父的值传到子}); new Vue({    el:’#my’,    data:{">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组件传参">
 <meta property="og:url" content="http://yoursite.com/2018/07/11/32-md-md/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="父到子传参 propsVue.component(‘my-hello’,{    template:’hello‘,    data:function(){        return{            msg:’123’        }    },    props:[‘num’]  //父的值传到子}); new Vue({    el:’#my’,    data:{">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-11T04:33:14.224Z">
+<meta property="og:updated_time" content="2018-07-11T04:54:11.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="32-md.md">
+<meta name="twitter:title" content="组件传参">
+<meta name="twitter:description" content="父到子传参 propsVue.component(‘my-hello’,{    template:’hello‘,    data:function(){        return{            msg:’123’        }    },    props:[‘num’]  //父的值传到子}); new Vue({    el:’#my’,    data:{">
   
     <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -75,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      32-md.md
+      组件传参
     </h1>
   
 
@@ -83,11 +86,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="父到子传参-props"><a href="#父到子传参-props" class="headerlink" title="父到子传参 props"></a>父到子传参 props</h2><p>Vue.component(‘my-hello’,{<br>    template:’</p><h2>hello</h2>‘,<br>    data:function(){<br>        return{<br>            msg:’123’<br>        }<br>    },<br>    props:[‘num’]  //父的值传到子<br>});<p></p>
+<p>new Vue({<br>    el:’#my’,<br>    data:{<br>        value:’12346’,<br>        msg:’hello’,<br>        name:’sonnia’,<br>        arr:[1,2,3]<br>    }<br>})</p>
+<div id="my"><br><my-hello v-for="a in arr" :num="a"></my-hello><br><br></div>
+
+
+<h2 id="子到父传参-emit-‘abc’-传参-v-on-abc-””"><a href="#子到父传参-emit-‘abc’-传参-v-on-abc-””" class="headerlink" title="子到父传参 $emit(‘abc’,传参) v-on:abc=””"></a>子到父传参 $emit(‘abc’,传参) v-on:abc=””</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/11/32-md-md/" data-id="cjjgmq095000hwsv6cdlmv813" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/11/32-md-md/" data-id="cjjgp61dj000k3wv60u1qxdi8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +144,7 @@
       <ul>
         
           <li>
-            <a href="/blog/2018/07/11/32-md-md/">32-md.md</a>
+            <a href="/blog/2018/07/11/32-md-md/">组件传参</a>
           </li>
         
           <li>
