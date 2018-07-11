@@ -62,6 +62,42 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-32-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/07/11/32-md-md/" class="article-date">
+  <time datetime="2018-07-11T04:33:14.000Z" itemprop="datePublished">2018-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/07/11/32-md-md/">32-md.md</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/11/32-md-md/" data-id="cjjgmq095000hwsv6cdlmv813" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-31-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/07/10/31-md-md/" class="article-date">
@@ -92,12 +128,13 @@
 <p>组件里面有依赖 如-ul li-  -ol li-等要在模板里面写如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id=&quot;myTre&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">       &lt;tbody&gt;</span><br><span class="line">            &lt;tr&gt;&lt;/tr&gt;</span><br><span class="line">       &lt;/tbody&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;my-tre&gt;&lt;/my-tre&gt;</span><br><span class="line"></span><br><span class="line">&lt;template id=&quot;myTre&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;my-tre&gt;&lt;/my-tre&gt;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//如果在外面写了就这样解决  判断id是否相符</span><br><span class="line">&lt;template id=&quot;myTre&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">       &lt;tbody&gt;</span><br><span class="line">            &lt;tr&gt;&lt;/tr&gt;</span><br><span class="line">       &lt;/tbody&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tbody is=&quot;myTr&quot;&gt;&lt;/tbody&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="插座式"><a href="#插座式" class="headerlink" title="插座式"></a>插座式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id=&quot;myTre&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">       &lt;p&gt;123&lt;/p&gt;</span><br><span class="line">       &lt;slot name=&quot;s1&quot;&gt;&lt;slot&gt;</span><br><span class="line">       &lt;slot name=&quot;s2&quot;&gt;&lt;slot&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;my-tre&gt;</span><br><span class="line">    &lt;ul slot=&quot;s1&quot;&gt;</span><br><span class="line">        &lt;li&gt;s1&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ul slot=&quot;s2&quot;&gt;</span><br><span class="line">        &lt;li&gt;s2&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/my-tre&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="动态模板"><a href="#动态模板" class="headerlink" title="动态模板"></a>动态模板</h2><p>点击那个显示那个内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    date:&#123;</span><br><span class="line">        flag:&apos;my-tab&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;button @click=&quot;flag=&apos;my-tab&apos;&quot;&gt;my-tab&lt;/button&gt;</span><br><span class="line">&lt;button @click=&quot;flag=&apos;my-tre&apos;&quot;&gt;my-tre&lt;/button&gt;</span><br><span class="line">&lt;my-tab v-if=&quot;flag==&apos;my-tab&quot;&gt;&lt;/my-tab&gt;</span><br><span class="line">&lt;my-tre v-if=&quot;flag==&apos;my-tre&quot;&gt;&lt;/my-tre&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="动态模板"><a href="#动态模板" class="headerlink" title="动态模板"></a>动态模板</h2><p>点击那个显示那个内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    date:&#123;</span><br><span class="line">        flag:&apos;my-tab&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;button @click=&quot;flag=&apos;my-tab&apos;&quot;&gt;my-tab&lt;/button&gt;</span><br><span class="line">&lt;button @click=&quot;flag=&apos;my-tre&apos;&quot;&gt;my-tre&lt;/button&gt;</span><br><span class="line">&lt;my-tab v-if=&quot;flag==&apos;my-tab&quot;&gt;&lt;/my-tab&gt;</span><br><span class="line">&lt;my-tre v-if=&quot;flag==&apos;my-tre&quot;&gt;&lt;/my-tre&gt;</span><br><span class="line">&lt;component :is=&quot;flag&quot;&gt;&lt;/component&gt;//简化</span><br></pre></td></tr></table></figure></p>
+<h2 id="缓存数据-组件-keep-alive"><a href="#缓存数据-组件-keep-alive" class="headerlink" title="缓存数据(组件)  keep-alive"></a>缓存数据(组件)  keep-alive</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">    date:&#123;</span><br><span class="line">        flag:&apos;my-c1&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    components:&#123;</span><br><span class="line">        &apos;my-cl&apos;：&#123;</span><br><span class="line">            template:&apos;&lt;h3&gt;&lt;/h3&gt;&apos;,</span><br><span class="line">            data:function()&#123;</span><br><span class="line">                return&#123;</span><br><span class="line">                    x:Math,random();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &apos;my-c2&apos;：&#123;</span><br><span class="line">            template:&apos;&lt;h3&gt;&lt;/h3&gt;&apos;,</span><br><span class="line">            data:function()&#123;</span><br><span class="line">                return&#123;</span><br><span class="line">                    y:Math,random();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;button @click=&quot;flag=&apos;my-c1&apos;&quot;&gt;my-c1&lt;/button&gt;</span><br><span class="line">&lt;button @click=&quot;flag=&apos;my-c2&apos;&quot;&gt;my-c2&lt;/button&gt;</span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line">&lt;component :is=&quot;flag2&quot;&gt;&lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/10/31-md-md/" data-id="cjjfv40r4000l54v6vg2tncjl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/10/31-md-md/" data-id="cjjgmq092000gwsv6m56mcpwl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/08/30-md-md/" data-id="cjjfv40qr000f54v6y6fd2es8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/08/30-md-md/" data-id="cjjgmq0a0000rwsv6xklzmz07" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/08/29-md-md/" data-id="cjjfv40qy000i54v65up36ir4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/08/29-md-md/" data-id="cjjgmq09x000qwsv6fxdob1if" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/06/28-md-md/" data-id="cjjfv40se000u54v6ok3i8h8x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/06/28-md-md/" data-id="cjjgmq09d000kwsv6m92my0iw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/27-md-md/" data-id="cjjfv40s4000r54v6s65yja8c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/27-md-md/" data-id="cjjgmq0al000uwsv6i5sc6il0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -294,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/26-md-md/" data-id="cjjfv40qu000g54v60nox9vyq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/26-md-md/" data-id="cjjgmq08z000fwsv68fxng7xt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -330,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/25-md-md/" data-id="cjjfv40qo000e54v6k2d7uya2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/25-md-md/" data-id="cjjgmq08x000ewsv6svgwqtei" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/24-md-md/" data-id="cjjfv40qm000d54v6i6n09xfn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/24-md-md/" data-id="cjjgmq08u000dwsv64xy0a6lh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,43 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/23-md-md/" data-id="cjjfv40qi000c54v6vcw18478" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-22-md-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/07/05/22-md-md/" class="article-date">
-  <time datetime="2018-07-05T04:59:55.000Z" itemprop="datePublished">2018-07-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/07/05/22-md-md/">22-md.md</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/05/22-md-md/" data-id="cjjfv40qf000b54v6luttwvs2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/05/23-md-md/" data-id="cjjgmq08c0009wsv6omt25q76" class="article-share-link">Share</a>
       
       
     </footer>
@@ -484,6 +485,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2018/07/11/32-md-md/">32-md.md</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/07/10/31-md-md/">组件</a>
           </li>
         
@@ -497,10 +502,6 @@
         
           <li>
             <a href="/blog/2018/07/06/28-md-md/">vue常见指令</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/05/27-md-md/">VUE</a>
           </li>
         
       </ul>
