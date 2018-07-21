@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>路由 vue-router | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue-router 单应用界面路由 是把数据从一个地方传送到另一个地方的行为和动作vue-router.js 路由四步1、定义组件 1234567var Home = Vue.component(&amp;apos;Home&amp;apos;,&amp;#123;    template:&amp;apos;&amp;lt;h2&amp;gt;my world&amp;lt;/h2&amp;gt;&amp;apos;&amp;#125;);var News = Vue.c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="路由 vue-router">
+<meta property="og:url" content="http://yoursite.com/2018/07/21/34-md-md/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue-router 单应用界面路由 是把数据从一个地方传送到另一个地方的行为和动作vue-router.js 路由四步1、定义组件 1234567var Home = Vue.component(&amp;apos;Home&amp;apos;,&amp;#123;    template:&amp;apos;&amp;lt;h2&amp;gt;my world&amp;lt;/h2&amp;gt;&amp;apos;&amp;#125;);var News = Vue.c">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-21T15:55:12.278Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="路由 vue-router">
+<meta name="twitter:description" content="vue-router 单应用界面路由 是把数据从一个地方传送到另一个地方的行为和动作vue-router.js 路由四步1、定义组件 1234567var Home = Vue.component(&amp;apos;Home&amp;apos;,&amp;#123;    template:&amp;apos;&amp;lt;h2&amp;gt;my world&amp;lt;/h2&amp;gt;&amp;apos;&amp;#125;);var News = Vue.c">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-34-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/07/21/34-md-md/" class="article-date">
+  <time datetime="2018-07-21T14:15:43.000Z" itemprop="datePublished">2018-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      路由 vue-router
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue-router-单应用界面"><a href="#vue-router-单应用界面" class="headerlink" title="vue-router 单应用界面"></a>vue-router 单应用界面</h2><p>路由 是把数据从一个地方传送到另一个地方的行为和动作<br>vue-router.js</p>
+<h2 id="路由四步"><a href="#路由四步" class="headerlink" title="路由四步"></a>路由四步</h2><p>1、定义组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var Home = Vue.component(&apos;Home&apos;,&#123;</span><br><span class="line">    template:&apos;&lt;h2&gt;my world&lt;/h2&gt;&apos;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var News = Vue.component(&apos;News&apos;,&#123;</span><br><span class="line">    template:&apos;&lt;h2&gt;my world&lt;/h2&gt;&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>2、配置路由<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var routes = [</span><br><span class="line">    &#123;path:&apos;/home&apos;,component:Home&#125;,</span><br><span class="line">    &#123;path:&apos;/news/:id&apos;,component:News&#125;,</span><br><span class="line">    &#123;path:&apos;/*&apos;,component:Home&#125; //重定向 当输入的链接有问题就跳首页</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>3、创建路由实例 相当于一个管理者，来管理路由<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var router = new VueRouter(&#123;</span><br><span class="line">    routes,//router = routes  接收routes参数</span><br><span class="line">    linkActiveClass:&apos;active&apos;//设定路由样式</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">    el:&apos;#my&apos;,</span><br><span class="line">    id：100,</span><br><span class="line">    router,//4、router 实例注入VUE</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=&quot;my&quot;&gt;</span><br><span class="line">    //router-link 导航 默认会被浏览器渲染成a标签</span><br><span class="line">    //to 属性指定的链接</span><br><span class="line">    &lt;router-link to=&quot;/home&quot;&gt;home&lt;/router-link&gt;</span><br><span class="line">    &lt;router-link to=&quot;/news&quot;&gt;news&lt;/router-link&gt;</span><br><span class="line">    &lt;router-link :to=&quot;&apos;/news/&apos;+id&quot;&gt;news&lt;/router-link&gt;//动态传参</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        //出口文件  路由匹配的组件将被渲染在出口文件中</span><br><span class="line">        &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="路由传值"><a href="#路由传值" class="headerlink" title="路由传值"></a>路由传值</h2><p>$router.params.id ==&gt;/test/5<br>$router.query.id  ==&gt;/test?id=123</p>
+<h2 id="子路由"><a href="#子路由" class="headerlink" title="子路由"></a>子路由</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">var Home = &#123;</span><br><span class="line">    template:&apos;#home&apos;</span><br><span class="line">&#125;;</span><br><span class="line">var News = &#123;</span><br><span class="line">    template:&apos;#new&apos;</span><br><span class="line">&#125;;</span><br><span class="line">var Login = &#123;</span><br><span class="line">    template:&apos;#login&apos;</span><br><span class="line">&#125;;</span><br><span class="line">var Regist = &#123;</span><br><span class="line">    template:&apos;#regist&apos;</span><br><span class="line">&#125;;</span><br><span class="line">var routes = [</span><br><span class="line">    &#123;path:&apos;/home&apos;,component:Home&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path:&apos;/news/:id&apos;,</span><br><span class="line">        component:News</span><br><span class="line">        children:[</span><br><span class="line">            &#123;path:&apos;login&apos;,component:Login&#125;,</span><br><span class="line">            &#123;path:&apos;regist&apos;,component:Regist&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;path:&apos;/*&apos;,component:Home&#125; //重定向 当输入的链接有问题就跳首页</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">var router = new VueRouter(&#123;</span><br><span class="line">    routes,//router = routes  接收routes参数</span><br><span class="line">    linkActiveClass:&apos;active&apos;//设定路由样式</span><br><span class="line">&#125;)</span><br><span class="line">new Vue(&#123;</span><br><span class="line">    el:&apos;#my&apos;,</span><br><span class="line">    router,//4、router 实例注入VUE</span><br><span class="line">    methods:&#123;</span><br><span class="line">        home:function()&#123;</span><br><span class="line">            router.push(&#123;path:/news&#125;)//路由跳转</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;template id=&quot;home&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;home&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;template id=&quot;news&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;用户信息&lt;/h2&gt;</span><br><span class="line">        &lt;router-link to=&quot;/login&quot;&gt;login&lt;/router-link&gt;</span><br><span class="line">        &lt;router-link to=&quot;/regist&quot;&gt;regist&lt;/router-link&gt;</span><br><span class="line">        &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;my&quot;&gt;</span><br><span class="line">    //router-link 导航 默认会被浏览器渲染成a标签</span><br><span class="line">    //to 属性指定的链接</span><br><span class="line">    &lt;router-link to=&quot;/home&quot;&gt;home&lt;/router-link&gt;</span><br><span class="line">    &lt;router-link to=&quot;/news&quot;&gt;news&lt;/router-link&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        //出口文件  路由匹配的组件将被渲染在出口文件中</span><br><span class="line">        &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;button @click=&apos;home()&apos;&gt;&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="动画-animate-daneden-github-io-animate"><a href="#动画-animate-daneden-github-io-animate" class="headerlink" title="动画 animate daneden.github.io/animate"></a>动画 animate daneden.github.io/animate</h2><p>引用animate.css<br>钩子函数 捕获消息就会执行<br>回调函数 消息结束后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=&quot;flag=!flag&quot;&gt;click&lt;/button&gt;</span><br><span class="line">&lt;transition enter-active-class=&quot;animated jello&quot; leave-active-class=&quot;animated shake&quot;&gt;</span><br><span class="line">    &lt;div v-show=&quot;flag&quot;&gt;123&lt;/div&gt;</span><br><span class="line">&lt;/transition&gt;</span><br><span class="line">//自己写动画</span><br><span class="line">&lt;transition name=&quot;fade&quot;</span><br><span class="line">    @before-enter=&quot;&quot;</span><br><span class="line">    @enter=&quot;&quot;</span><br><span class="line">    @after-enter=&quot;&quot;&gt;</span><br><span class="line">    &lt;div v-show=&quot;flag&quot;&gt;123&lt;/div&gt;</span><br><span class="line">&lt;/transition&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/21/34-md-md/" data-id="cjjvlhkv2000lfov6vwdufpvd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/07/14/33-md-md/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">监听与计算属性</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2018/07/21/34-md-md/">路由 vue-router</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/14/33-md-md/">监听与计算属性</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/11/32-md-md/">组件传参</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/10/31-md-md/">组件</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/08/30-md-md/">vue</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

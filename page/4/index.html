@@ -62,6 +62,117 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-five-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/10/five-md-md/" class="article-date">
+  <time datetime="2018-06-10T12:23:55.000Z" itemprop="datePublished">2018-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/10/five-md-md/">属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="属性添加和获取"><a href="#属性添加和获取" class="headerlink" title="属性添加和获取 ./[]"></a>属性添加和获取 ./[]</h3><p>区别.取自身的属性  []可以是变量</p>
+<p>属性的添加和获取：<br>var obj = {}<br>obj.name = ‘xm’<br>obj[‘age’] = 20</p>
+<p>var obj = {}<br>    obj.name = ‘xz’<br>    obj.a = ‘aa’<br>var a = ‘name’</p>
+<pre><code>obj[&apos;a&apos;] //aaa
+obj[a] //xz =&gt; obj[&apos;name&apos;]
+</code></pre><h3 id="属性删除-delete"><a href="#属性删除-delete" class="headerlink" title="属性删除 delete"></a>属性删除 delete</h3><p>var obj = {}<br>obj.name = ‘xm’<br>obj.nage = 20<br>delete obj.name<br>delete obj.[‘age’]</p>
+<h3 id="属性检测-判断对象中是否存在属性"><a href="#属性检测-判断对象中是否存在属性" class="headerlink" title="属性检测 判断对象中是否存在属性"></a>属性检测 判断对象中是否存在属性</h3><p>1、in 运算符(可以获取继承的属性)<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>console.log(‘name’ in obj) //true  =&gt; true/false</p>
+<p>2、使用对象hasOwnProperty()方法(不可以获取继承的属性)<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>obj.hasOwnProperty(‘name’) //true  =&gt; true/false</p>
+<p>3、!= undefined 值得判断  缺点是值不能为undefined =&gt; name = undefined<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>console.log(obj.name !== undefined) //true  =&gt; true/false</p>
+<h3 id="枚举属性"><a href="#枚举属性" class="headerlink" title="枚举属性"></a>枚举属性</h3><p>1、for in<br>var arr = [‘a’, ‘b’ ,’c’, ‘d’]<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>for(a in obj){//for(属性 in 对象)<br>    console.log(a) //name age<br>    console.log(obj[a]) //xz 20  不能用obj.a =&gt; a 是变量<br>}<br>for(a in arr){//for(索引 in 数组)<br>    console.log(a) //0 1 2 3 4<br>    console.log(arr[a]) //a b c d<br>}</p>
+<p>2、forEach() map() 都是便利数组的方法， map有返回值 ie6、7不支持<br>var arr = [‘a’, ‘b’ ,’c’, ‘d’]<br>arr.forEach(function(item,index){<br>    console.log(item)<br>})</p>
+<p>arr.map() 回调函数支持return返回值<br>arr.map(function(item,index){<br>    return item<br>})</p>
+<p>数组还可以用for循环<br>for(var i;i&lt;10;i++){}</p>
+<h3 id="序列化-JSON-parse-对象字符串转为对象-深拷贝-JSON-stringify-对象转对象字符串"><a href="#序列化-JSON-parse-对象字符串转为对象-深拷贝-JSON-stringify-对象转对象字符串" class="headerlink" title="序列化 JSON.parse()对象字符串转为对象(深拷贝)  JSON.stringify()对象转对象字符串"></a>序列化 JSON.parse()对象字符串转为对象(深拷贝)  JSON.stringify()对象转对象字符串</h3><h3 id="深拷贝-双胞胎-浅拷贝-引用-影子"><a href="#深拷贝-双胞胎-浅拷贝-引用-影子" class="headerlink" title="深拷贝(双胞胎) 浅拷贝(引用 影子)"></a>深拷贝(双胞胎) 浅拷贝(引用 影子)</h3><p>1、数组<br>var arr = [‘a’, ‘b’ ,’c’, ‘d’]<br>a)slice() concat()  //返回新的数组<br>var arrCopy = arr.slice(0);<br>var arrCopy = arr.concat();</p>
+<p>2、对象<br>var obj = {<br>    name = ‘xz’,<br>    age = 20<br>}<br>var objCopy = JSON.parse(JSON.stringify(obj))</p>
+<p>###小练习<br>1、数组对象深拷贝<br>var lists = [{name:’xz’,age:16},{name:’xz1’,age:16},{name:’xz2’,age:16}];<br>var listsCopy = JSON.parse(JSON.stringify(lists));<br>listsCopy[1].name = ‘ccc’;<br>listsCopy // {name:’xz’,age:16},{name:’ccc’,age:16},{name:’xz2’,age:16}<br>list // {name:’xz’,age:16},{name:’xz1’,age:16},{name:’xz2’,age:16}</p>
+<p>2、数组对象有X返回1，否则返回2<br>var arr = [{x:1,y:2,z:3},{a:3,b:5,c:6},{l:6,m:8,n:9}];</p>
+<p>方法一：<br>arr.forEach(function(item,index){<br>    for(i in item){<br>        if(i == ‘x’){<br>            console.log(‘1’)<br>        }else{<br>            console.log(‘2’)<br>        }<br>    }<br>})</p>
+<p>方法二：<br>arr.forEach(function(item,index){<br>    if(item.hsaOwnPropety(‘x’)){<br>        console.log(‘1’)<br>    }else{<br>            console.log(‘2’)<br>        }</p>
+<pre><code>//if(item.x !== undefined){
+    console.log(&apos;1&apos;)
+}else{
+        console.log(&apos;2&apos;)
+    }
+</code></pre><p>})</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjjvlhkw6000xfov6cmogl2dd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-three-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/07/three-md-md/" class="article-date">
+  <time datetime="2018-06-07T10:48:15.000Z" itemprop="datePublished">2018-06-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/07/three-md-md/">JS类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS类型"><a href="#JS类型" class="headerlink" title="JS类型"></a>JS类型</h2><h3 id="数据类型-七大类型"><a href="#数据类型-七大类型" class="headerlink" title="数据类型 七大类型"></a>数据类型 七大类型</h3><p>基本数据类型：number 、 string 、 boolean 、 undefined 、 null<br>复杂数据类型/引用数据类型  (object array) 、 (object function)<br>null是空的对象 =&gt; var obj = null<br>所以 undefined === null //false</p>
+<h3 id="引用类型-三大类型"><a href="#引用类型-三大类型" class="headerlink" title="引用类型  三大类型"></a>引用类型  三大类型</h3><p>1、array类型<br>   a)使用array构造函数  var  arr = new Array()<br>   b)字面量表示法 var  arr = [a,b,c]</p>
+<p>2、object类型<br>   a)object构造函数 var obj = new Object()<br>   b)字面量表示法<br>        简单字面量 var obj = {}<br>        嵌套字面量 var obj = {<br>                        name:’xiaoming’,<br>                        age:20<br>                 }<br>    c)工厂方式<br>    function createObj(name){<br>        var obj = new Object()<br>        obj.name = name<br>        obj.showName = function(){function(){console.log(this.name)}}<br>        return obj<br>    }<br>    var p = createObj(‘a’)<br>    p.showName()</p>
+<p>   d)构造函数  首字母大写 驼峰式</p>
+<pre><code>function CreateObj(name){
+        this.name = name
+        this.showName = function(){function(){console.log(this.name)}}
+    }
+    var p = new CreateObj(&apos;a&apos;)
+    p.showName()
+</code></pre><p>2、function类型</p>
+<p>  a)函数声明//在前后调用都可以<br>    sum()<br>    function sum(){}<br>    sum()</p>
+<p>  a)函数表达式//在后面调用<br>    var sum = function(){}<br>    sum()</p>
+<p>值类型和引用类型的区别<br>值类型，直接赋给别人，不会互相影响<br>引用类型会改变原来的</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjjvlhkvk000ufov600vyhd5b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="psot-promise" class="article article-type-psot" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/06/07/promise/" class="article-date">
@@ -182,7 +293,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjjjinw1k000sngv659z7v0r3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjjvlhkvj000tfov6klwijxs2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +334,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjjjinw1i000rngv6h0mfv7yt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjjvlhkvb000pfov63580jda8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -269,6 +380,14 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       <ul>
         
           <li>
+            <a href="/blog/2018/07/21/34-md-md/">路由 vue-router</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/14/33-md-md/">监听与计算属性</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/07/11/32-md-md/">组件传参</a>
           </li>
         
@@ -278,14 +397,6 @@ myPromise.prototype.then = function (onResolved, onRejected) {
         
           <li>
             <a href="/blog/2018/07/08/30-md-md/">vue</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/08/29-md-md/">vue v-model</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/06/28-md-md/">vue常见指令</a>
           </li>
         
       </ul>
