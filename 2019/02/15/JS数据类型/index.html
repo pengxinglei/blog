@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="JS数据类型 原始值与引用数据类型 原始值 ==&amp;gt; 基本数据类型1.number2.string3.boolean4.undefined5.null  复杂数据类型/引用数据类型 object1.Array2.Object3.Function    typeof 检测数据类型 Array类型 第一种使用Array构造函数var arr = new Array()  第二种字面量表示法var">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-15T08:35:10.347Z">
+<meta property="og:updated_time" content="2019-02-15T08:54:25.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS数据类型">
 <meta name="twitter:description" content="JS数据类型 原始值与引用数据类型 原始值 ==&amp;gt; 基本数据类型1.number2.string3.boolean4.undefined5.null  复杂数据类型/引用数据类型 object1.Array2.Object3.Function    typeof 检测数据类型 Array类型 第一种使用Array构造函数var arr = new Array()  第二种字面量表示法var">
@@ -111,15 +111,28 @@
 </ul>
 <p>1.简单字面量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">obj.name = &apos;aa&apos;;</span><br></pre></td></tr></table></figure></p>
 <p>2.嵌套字面量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;name:&apos;aa&apos;&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="JSON数据键值都是双引号-当键里面有空格、“-”等特殊符号以及关键字等都要引号"><a href="#JSON数据键值都是双引号-当键里面有空格、“-”等特殊符号以及关键字等都要引号" class="headerlink" title="JSON数据键值都是双引号 当键里面有空格、“-”等特殊符号以及关键字等都要引号"></a>JSON数据键值都是双引号 当键里面有空格、“-”等特殊符号以及关键字等都要引号</h4><h4 id="第三种工厂方式-驼峰式命名"><a href="#第三种工厂方式-驼峰式命名" class="headerlink" title="第三种工厂方式 驼峰式命名"></a>第三种工厂方式 驼峰式命名</h4><p>function createObj(name){<br>    var obj = new Object();<br>    obj.name = name;<br>    return obj;<br>};<br>var p = createObj(“a”);</p>
-<h4 id="第四种构造函数-驼峰式命名，首字母大写"><a href="#第四种构造函数-驼峰式命名，首字母大写" class="headerlink" title="第四种构造函数 驼峰式命名，首字母大写"></a>第四种构造函数 驼峰式命名，首字母大写</h4><p>function CreateObj(name){<br>    this.name = name;<br>};<br>var p = new CreateObj(‘a’)</p>
-<h3 id="function类型"><a href="#function类型" class="headerlink" title="function类型"></a>function类型</h3><p>函数声明<br>function a(x,y){<br>    return x+y;<br>}</p>
-<p>函数表达式<br>var a = function(x,y){<br>    return x+y;<br>}</p>
-<h4 id="区别：声明调用可以在前后调用，表达式必须在后调用"><a href="#区别：声明调用可以在前后调用，表达式必须在后调用" class="headerlink" title="区别：声明调用可以在前后调用，表达式必须在后调用"></a>区别：声明调用可以在前后调用，表达式必须在后调用</h4><h4 id="值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组"><a href="#值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组" class="headerlink" title="值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组"></a>值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组</h4>
+<hr>
+<h6 id="JSON数据键值都是双引号-当键里面有空格、“-”等特殊符号以及关键字等都要引号"><a href="#JSON数据键值都是双引号-当键里面有空格、“-”等特殊符号以及关键字等都要引号" class="headerlink" title="JSON数据键值都是双引号 当键里面有空格、“-”等特殊符号以及关键字等都要引号"></a>JSON数据键值都是双引号 当键里面有空格、“-”等特殊符号以及关键字等都要引号</h6><hr>
+<h6 id="第三种工厂方式-驼峰式命名"><a href="#第三种工厂方式-驼峰式命名" class="headerlink" title="第三种工厂方式 驼峰式命名"></a>第三种工厂方式 驼峰式命名</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function createObj(name)&#123;</span><br><span class="line">    var obj = new Object();</span><br><span class="line">    obj.name = name;</span><br><span class="line">    return obj;</span><br><span class="line">&#125;;</span><br><span class="line">var p = createObj(&quot;a&quot;);</span><br></pre></td></tr></table></figure>
+<hr>
+<h6 id="第四种构造函数-驼峰式命名，首字母大写"><a href="#第四种构造函数-驼峰式命名，首字母大写" class="headerlink" title="第四种构造函数 驼峰式命名，首字母大写"></a>第四种构造函数 驼峰式命名，首字母大写</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function CreateObj(name)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;;</span><br><span class="line">var p = new CreateObj(&apos;a&apos;)</span><br></pre></td></tr></table></figure>
+<hr>
+<h6 id="function类型"><a href="#function类型" class="headerlink" title="function类型"></a>function类型</h6><ul>
+<li><p>函数声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function a(x,y)&#123;</span><br><span class="line">    return x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = function(x,y)&#123;</span><br><span class="line">    return x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h6 id="区别：声明调用可以在前后调用，表达式必须在后调用"><a href="#区别：声明调用可以在前后调用，表达式必须在后调用" class="headerlink" title="区别：声明调用可以在前后调用，表达式必须在后调用"></a>区别：声明调用可以在前后调用，表达式必须在后调用</h6><hr>
+<h6 id="值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组"><a href="#值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组" class="headerlink" title="值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组"></a>值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组</h6><hr>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/15/JS数据类型/" data-id="cjs5sspiu000p90v6du6enl3l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/15/JS数据类型/" data-id="cjs5t14zs000p50v6cfn4w2cz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,11 +141,11 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2019/02/15/对象与原型/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2019/02/15/属性与枚举/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          对象与原型.md
+          属性、枚举与序列化.md
         
       </div>
     </a>
@@ -177,11 +190,11 @@
       <ul>
         
           <li>
-            <a href="/blog/2019/02/15/属性与枚举/">属性、枚举与序列化.md</a>
+            <a href="/blog/2019/02/15/对象与原型/">对象与原型.md</a>
           </li>
         
           <li>
-            <a href="/blog/2019/02/15/对象与原型/">对象与原型.md</a>
+            <a href="/blog/2019/02/15/属性与枚举/">属性、枚举与序列化.md</a>
           </li>
         
           <li>
