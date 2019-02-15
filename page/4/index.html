@@ -62,6 +62,203 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ning-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/19/ning-md-md/" class="article-date">
+  <time datetime="2018-06-19T13:37:29.000Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/19/ning-md-md/">json 与 ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>JSON它是<br>1、JSON中对象要求给属性添加双引号<br>2、JSON对象末尾没有分号<br>3、同一个对象中绝对不允许出现两个同名属性</p>
+<p>{<br>    “name” : “xz”,<br>    “age” : 20<br>}</p>
+<h2 id="www-bejson-com-检查JSON的格式"><a href="#www-bejson-com-检查JSON的格式" class="headerlink" title="www.bejson.com 检查JSON的格式"></a><a href="http://www.bejson.com" target="_blank" rel="noopener">www.bejson.com</a> 检查JSON的格式</h2><h2 id="JSON-stringify-过滤"><a href="#JSON-stringify-过滤" class="headerlink" title="JSON.stringify 过滤"></a>JSON.stringify 过滤</h2><p>var data = {<br>    “nama” = “xz”,<br>    “hobby” : [“sing”,”game”],<br>    “work” : {<br>        “job” : “web开发”,<br>        “address” : “wuhan”<br>    }<br>}<br>console.log(JSON.stringify(data,[‘name’,’hobby’]));</p>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>XMLHttpRequest  XHR  ActiveXObject (ie5 ie6)<br>1、创建XHR对象<br>2、连接服务器<br>3、发送请求<br>4、接受响应</p>
+<p>//原生<br>var xhr;<br>if(window.XMLHttpRequest){<br>    xhr = new XMLHttpRequest()<br>}else{<br>    xhr = ActiveXObject(“Microsoft,XMLHTTP”) //处理IE5 6兼容性<br>}；<br>xhr.open(‘get’,’url?name=xz&amp;age=20’,true); //请求的类型 true异步 false 同步 get post put delete<br>xhr.setRequestHeader(“Content-Type”,”application/json”);//data只能是json<br>xhr.send();//xhr.send(DSON.stringify({“name=xz”})) //post请求传入string<br>onreadystatechage = function(){ //readystate变化会触发<br>    if(xhr.readyState == 4 &amp; xhr.status == 200){<br>        console.log(xhr.responseText) //响应的数据<br>    }<br>}</p>
+<p>//jquery<br>$.ajax({<br>    type:’get’,<br>    url:url,<br>    async:true, //async异步  sync同步<br>    data:data, //post<br>    dataType:’json’,<br>    success:function(data){</p>
+<pre><code>},
+error:function(error){}
+</code></pre><p>})</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/19/ning-md-md/" data-id="cjs5q0v7v000utsv69dw1kohe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-eight-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/18/eight-md-md/" class="article-date">
+  <time datetime="2018-06-18T13:01:26.000Z" itemprop="datePublished">2018-06-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/18/eight-md-md/">this与正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="this-关键字-当前"><a href="#this-关键字-当前" class="headerlink" title="this 关键字 当前"></a>this 关键字 当前</h3><p>this指的调用函数的那个对象</p>
+<p>1、函数中引用<br>var x =1;<br>function f (){<br>    this.x;<br>}<br>console.log(x) //1</p>
+<p>var x =1;<br>function f (){<br>    this.x = 2;<br>}<br>console.log(x) //1</p>
+<p>var x =1;<br>function f (){<br>    this.x = 2;<br>}<br>f();<br>console.log(x) //2</p>
+<p>//没有被绑定的对象，默认this指向window对象<br>var x =1;<br>function f (){<br>    this.x = 2;<br>}<br>function f1 (){<br>    this.x = 3;<br>}<br>f1();<br>f();<br>console.log(x) //2</p>
+<p>//绑定<br>var f = function(){<br>    console.log(this);//o对象<br>}<br>var o ={}<br>o.name = ‘xz’;<br>o.action = f<br>o.action()</p>
+<p>var f = function(){<br>    console.log(this);//window<br>}<br>var o ={}<br>o.name = ‘xz’;<br>o.action = f<br>f()<br>对象中引用this当前对象</p>
+<p>构造函数引用  this<br>function F(name,age){<br>    this.name = name;<br>    this.age = age<br>}<br>var f = new F(‘ABC’,20)<br>f.name//ABC</p>
+<p>function F(name,age){<br>    this.name = name;<br>    this.age = age<br>}<br>var f = new F(‘ABC’,20)<br>f.name = ‘123’<br>f.name//123</p>
+<p>apply,call改变this指向，apply不传参默认为window<br>函数自执行如立即执行函数 this指向window</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>简单的表达式<br>如hi 可以匹配hi，him，等含hi的<br>\b 匹配一个单词的边界 匹配的独立的<br>\B 匹配一个单词的非边界  匹配有单词的<br>\d 匹配数字<br>\D 匹配非数字<br>\w 匹配字母/数字/下划线<br>\W 匹配除字母/数字/下划线以外的<br>^  开始<br>$  结束<br>[] 指定一堆字符中的一个<br>[^] 不匹配这个里面的任意一个</p>
+<ul>
+<li>表示前一个模式可以被重复1次或n次</li>
+</ul>
+<ul>
+<li>表示前一个模式可以被重复0次或n次<br>? 表示前一个模式可以被匹配0次或1次<br>{x} 表示前一个模式可以重复X次<br>{x,y} 表示前一个模式可以重复X到y次<br>{x,} 表示前一个模式可以重复至少X次<br>() 可以指定一堆字符来匹配一个模式 分组<br>| 或者 只能匹配其中一个<br>\转译</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/18/eight-md-md/" data-id="cjs5q0v7q000rtsv6v5etn126" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-seven-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/16/seven-md-md/" class="article-date">
+  <time datetime="2018-06-16T12:55:41.000Z" itemprop="datePublished">2018-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/16/seven-md-md/">闭包与递归</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##闭包<br>闭包就是能够读取其它函数内部变量的函数<br>JS中每个函数都是个体，它是可以获取父元素的信息，但是父元素不能直接获取子元素内容<br>关键点：是否引入了外部变量</p>
+<p>function a(){<br>    var n = 0;<br>    function add(){<br>        n++<br>        console.log(n)<br>    }<br>    add()<br>}<br>a() //1</p>
+<p>function a(){<br>    this.n=0;<br>    this.add = function(){<br>        this.n++<br>        console.log(this.n)<br>    }<br>}<br>var a1 = new a()<br>a1.add()</p>
+<p>function a(){<br>    var n=0;<br>    this.add = function(){<br>        n++<br>        console.log(n)<br>    }<br>}<br>var a1 = new a()<br>a1.add()</p>
+<p>function a(){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>    add()<br>}<br>a()()</p>
+<p>立即执行函数<br>var a = (function (){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>})()<br>a()</p>
+<p>##闭包传参<br>function f(x){<br>    var i = 0;<br>    return function(){<br>        return x[i++]<br>    }<br>}<br>var abc = f([‘a’,’b’,’c’])<br>abc()//a<br>abc()//b<br>abc()//c<br>abc()//undefined</p>
+<p>var a = (function (){<br>    var n = 0;<br>    return function add(){<br>        n++<br>        console.log(n)<br>    }<br>})([‘a’,’b’,’c’])<br>a()</p>
+<p>##递归 就是在运行的过程中调用自己</p>
+<p>阶乘<br>function f(n){<br>    if(n &lt;= 1){<br>        return 1;<br>    }else{<br>        return n*f(n-1)<br>    }<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/16/seven-md-md/" data-id="cjs5q0v83000xtsv61tyc16cr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-six-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/06/14/six-md-md/" class="article-date">
+  <time datetime="2018-06-14T12:27:47.000Z" itemprop="datePublished">2018-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/06/14/six-md-md/">原型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###原型</p>
+<p>JS一切皆对象， 两大类型 原始值+对象<br>函数有区别：函数对象和普通对象<br>函数对象是通过new Function =&gt; typeof =&gt; function,其它的都是普通对象=&gt; typeof =&gt; object,实例属于普通对象<br>function f(){} =&gt; 函数对象 ,var f1 = new f() =&gt; 普通对象<br>每一个函数对象都有一个prototype属性，普通对象没有<br>function f(){} = var f = new Function() 是简写形式<br>prototype下面又有constructor属性 指向当前的函数<br>对象都有<em>proto</em>属性 指向函数的原型对象</p>
+<p>function Person(){}//空的对象<br>Person.prototype.name = ‘xz’<br>Person.prototype.age = 12<br>var Person1 = new Person()<br>var Person2 = new Person()</p>
+<p>Person    &lt;——–|  ^—&gt;Person prototyp<br>prototype          |–|—-constructor<br>             <strong><strong>_</strong></strong>|   name<br>             |        |   age<br>             |        |<br>Person1      |        |    Person1<br>–proto–  &gt; |        |—&lt;–proto–</p>
+<p>function cat(name,color){//普通函数<br>        return{<br>            name: name,<br>            color: color<br>        }<br>}<br>var cat1 = cat(“大明”,”黄色”)<br>var cat2 = cat(“小明”,”白色”)</p>
+<p>构造函数与普通函数的区别：<br>都是普通函数，构造函数首字母大写，拥有this，this指向实例</p>
+<p>function Cat(name,color){//构造函数<br>        this.name = name,<br>        this.color = color<br>        this.type = “动物”<br>        this.eat = function(){console.log(‘吃老鼠’)}<br>}<br>var cat1 = new Cat(“大明”,”黄色”)<br>var cat2 = new Cat(“小明”,”白色”)</p>
+<p>//prototype(不占用内存，提高效率)<br>function Cat(name,color){//构造函数<br>        this.name = name,<br>        this.color = color<br>}<br>Cat.prototype.type = “动物”<br>Cat.prototype.eat = function(){console.log(‘吃老鼠’)}</p>
+<p>var cat1 = new Cat(“大明”,”黄色”)<br>var cat2 = new Cat(“小明”,”白色”)</p>
+<p>###prototype验证<br>in 不能判断属性方法是不是自身的还是原型上的<br>hasOwnPrototype 能验证属性方法是不是自身的还是原型上的<br>‘name’ in cat1  //true<br>‘type’ in cat1  //true<br>cat1.hasOwnPrototype(‘name’) //true<br>cat1.hasOwnPrototype(‘type’) //false<br>属性方法先在自己身上找，没有再在原型上找</p>
+<p>###构造函数的继承<br>function Animal(){//动物对象<br>    this.type = ‘动物’<br>}<br>function Cat(name,color){//猫对象<br>        Animal.apply(this) //将父对象的构造函数绑定在子对象上<br>        this.name = name<br>        this.color = color<br>}</p>
+<p>###apply()  call() 在一个对象中调用另一个对象 apply(this,参数) 改变this指向</p>
+<p>###区别参数不同 apply 传数组 call 一个一个传</p>
+<p>function Animal(){//动物对象<br>    this.type = ‘动物’<br>}<br>function Cat(name,color){//猫对象<br>        this.name = name<br>        this.color = color<br>}<br>Cat.prototype = new Animal()</p>
+<p>function Animal(){}//动物对象<br>Animal.prototype.type = ‘动物’<br>function Cat(name,color){//猫对象<br>        this.name = name<br>        this.color = color<br>}<br>Cat.prototype = Animal.prototype<br>这种方式省内存，更优，缺点Cat.prototype和Animal。prototype指向了同一个对象</p>
+<p>###apply() 与 call()的参数<br>function Cat(name,color){//猫对象<br>        this.name = name<br>        this.color = color<br>}<br>var cat = new Cat()<br>var o = {}<br>Cat.apply(o,[‘111’,’222’]) //Cat在o对象中执行<br>o.name //111</p>
+<p>function Cat(name,color){//猫对象<br>        this.name = name<br>        this.color = color<br>}<br>var cat = new Cat()<br>var o = {}<br>Cat.call(o,’aaa’,’bbb’) //Cat在o对象中执行<br>o.name //aaa</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/14/six-md-md/" data-id="cjs5q0v7y000vtsv6zt8e3qtg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-five-md-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2018/06/10/five-md-md/" class="article-date">
@@ -113,7 +310,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjjvlhkw6000xfov6cmogl2dd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/five-md-md/" data-id="cjs5q0v7s000stsv6b5vyzdx3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -163,7 +360,7 @@ obj[a] //xz =&gt; obj[&apos;name&apos;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjjvlhkvk000ufov600vyhd5b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/three-md-md/" data-id="cjs5q0v8u0010tsv6qyep02xj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +490,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjjvlhkvj000tfov6klwijxs2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/promise/" data-id="cjs5q0v7u000ttsv665hxlile" class="article-share-link">Share</a>
       
       
     </footer>
@@ -334,7 +531,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjjvlhkvb000pfov63580jda8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/07/one-md/" data-id="cjs5q0v81000wtsv6cfwxyrsg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -367,7 +564,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
     </div>
   </div>
 
@@ -380,23 +577,23 @@ myPromise.prototype.then = function (onResolved, onRejected) {
       <ul>
         
           <li>
+            <a href="/blog/2019/02/15/属性与枚举/">属性、枚举与序列化.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/02/15/对象与原型/">对象与原型.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/02/15/JS数据类型/">JS数据类型.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/22/35-md-md/">35-md.md</a>
+          </li>
+        
+          <li>
             <a href="/blog/2018/07/21/34-md-md/">路由 vue-router</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/14/33-md-md/">监听与计算属性</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/11/32-md-md/">组件传参</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/10/31-md-md/">组件</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/07/08/30-md-md/">vue</a>
           </li>
         
       </ul>
@@ -411,7 +608,7 @@ myPromise.prototype.then = function (onResolved, onRejected) {
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
+      &copy; 2019 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

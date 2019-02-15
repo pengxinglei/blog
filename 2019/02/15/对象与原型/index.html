@@ -5,19 +5,19 @@
   
 
   
-  <title>json 与 ajax | Hexo</title>
+  <title>对象与原型.md | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSONJSON它是1、JSON中对象要求给属性添加双引号2、JSON对象末尾没有分号3、同一个对象中绝对不允许出现两个同名属性 {    “name” : “xz”,    “age” : 20} www.bejson.com 检查JSON的格式JSON.stringify 过滤var data = {    “nama” = “xz”,    “hobby” : [“sing”,”game”]">
+  <meta name="description" content="JS一切皆对象  二大类 原始值 + 对象对象有区别 函数对象与普通对象函数对象是通过new Function(){}typeof为function普通对象typeof为object实例属于普通对象 每一个函数对象都有一个prototype属性普通对象没有prototype下面有constructor属性指向这个函数 实例:function Person(){} //空的函数Person.prot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="json 与 ajax">
-<meta property="og:url" content="http://yoursite.com/2018/06/19/ning-md-md/index.html">
+<meta property="og:title" content="对象与原型.md">
+<meta property="og:url" content="http://yoursite.com/2019/02/15/对象与原型/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JSONJSON它是1、JSON中对象要求给属性添加双引号2、JSON对象末尾没有分号3、同一个对象中绝对不允许出现两个同名属性 {    “name” : “xz”,    “age” : 20} www.bejson.com 检查JSON的格式JSON.stringify 过滤var data = {    “nama” = “xz”,    “hobby” : [“sing”,”game”]">
+<meta property="og:description" content="JS一切皆对象  二大类 原始值 + 对象对象有区别 函数对象与普通对象函数对象是通过new Function(){}typeof为function普通对象typeof为object实例属于普通对象 每一个函数对象都有一个prototype属性普通对象没有prototype下面有constructor属性指向这个函数 实例:function Person(){} //空的函数Person.prot">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-20T13:14:51.049Z">
+<meta property="og:updated_time" content="2019-02-15T07:08:09.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="json 与 ajax">
-<meta name="twitter:description" content="JSONJSON它是1、JSON中对象要求给属性添加双引号2、JSON对象末尾没有分号3、同一个对象中绝对不允许出现两个同名属性 {    “name” : “xz”,    “age” : 20} www.bejson.com 检查JSON的格式JSON.stringify 过滤var data = {    “nama” = “xz”,    “hobby” : [“sing”,”game”]">
+<meta name="twitter:title" content="对象与原型.md">
+<meta name="twitter:description" content="JS一切皆对象  二大类 原始值 + 对象对象有区别 函数对象与普通对象函数对象是通过new Function(){}typeof为function普通对象typeof为object实例属于普通对象 每一个函数对象都有一个prototype属性普通对象没有prototype下面有constructor属性指向这个函数 实例:function Person(){} //空的函数Person.prot">
   
     <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ning-md-md" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="psot-对象与原型" class="article article-type-psot" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/06/19/ning-md-md/" class="article-date">
-  <time datetime="2018-06-19T13:37:29.000Z" itemprop="datePublished">2018-06-19</time>
+    <a href="/blog/2019/02/15/对象与原型/" class="article-date">
+  <time datetime="2019-02-14T16:00:00.000Z" itemprop="datePublished">2019-02-15</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      json 与 ajax
+      对象与原型.md
     </h1>
   
 
@@ -86,20 +86,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>JSON它是<br>1、JSON中对象要求给属性添加双引号<br>2、JSON对象末尾没有分号<br>3、同一个对象中绝对不允许出现两个同名属性</p>
-<p>{<br>    “name” : “xz”,<br>    “age” : 20<br>}</p>
-<h2 id="www-bejson-com-检查JSON的格式"><a href="#www-bejson-com-检查JSON的格式" class="headerlink" title="www.bejson.com 检查JSON的格式"></a><a href="http://www.bejson.com" target="_blank" rel="noopener">www.bejson.com</a> 检查JSON的格式</h2><h2 id="JSON-stringify-过滤"><a href="#JSON-stringify-过滤" class="headerlink" title="JSON.stringify 过滤"></a>JSON.stringify 过滤</h2><p>var data = {<br>    “nama” = “xz”,<br>    “hobby” : [“sing”,”game”],<br>    “work” : {<br>        “job” : “web开发”,<br>        “address” : “wuhan”<br>    }<br>}<br>console.log(JSON.stringify(data,[‘name’,’hobby’]));</p>
-<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>XMLHttpRequest  XHR  ActiveXObject (ie5 ie6)<br>1、创建XHR对象<br>2、连接服务器<br>3、发送请求<br>4、接受响应</p>
-<p>//原生<br>var xhr;<br>if(window.XMLHttpRequest){<br>    xhr = new XMLHttpRequest()<br>}else{<br>    xhr = ActiveXObject(“Microsoft,XMLHTTP”) //处理IE5 6兼容性<br>}；<br>xhr.open(‘get’,’url?name=xz&amp;age=20’,true); //请求的类型 true异步 false 同步 get post put delete<br>xhr.setRequestHeader(“Content-Type”,”application/json”);//data只能是json<br>xhr.send();//xhr.send(DSON.stringify({“name=xz”})) //post请求传入string<br>onreadystatechage = function(){ //readystate变化会触发<br>    if(xhr.readyState == 4 &amp; xhr.status == 200){<br>        console.log(xhr.responseText) //响应的数据<br>    }<br>}</p>
-<p>//jquery<br>$.ajax({<br>    type:’get’,<br>    url:url,<br>    async:true, //async异步  sync同步<br>    data:data, //post<br>    dataType:’json’,<br>    success:function(data){</p>
-<pre><code>},
-error:function(error){}
-</code></pre><p>})</p>
+        <h3 id="JS一切皆对象-二大类-原始值-对象"><a href="#JS一切皆对象-二大类-原始值-对象" class="headerlink" title="JS一切皆对象  二大类 原始值 + 对象"></a>JS一切皆对象  二大类 原始值 + 对象</h3><h4 id="对象有区别-函数对象与普通对象"><a href="#对象有区别-函数对象与普通对象" class="headerlink" title="对象有区别 函数对象与普通对象"></a>对象有区别 函数对象与普通对象</h4><p>函数对象是通过new Function(){}typeof为function<br>普通对象typeof为object<br>实例属于普通对象</p>
+<p>每一个函数对象都有一个prototype属性<br>普通对象没有<br>prototype下面有constructor属性指向这个函数</p>
+<p>实例:<br>function Person(){} //空的函数<br>Person.prototypr.name = ‘sonia’;<br>Person.prototype.age = 22;<br>var person1 = new Pewson();<br>var person2 = new Pewson();</p>
+<p>Person<br>prototype</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/ning-md-md/" data-id="cjs5q0v7v000utsv69dw1kohe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/15/对象与原型/" data-id="cjs5q0v86000ytsv68wmagiw0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -108,19 +103,19 @@ error:function(error){}
     
 <nav id="article-nav">
   
-    <a href="/blog/2018/07/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2019/02/15/属性与枚举/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Hello World
+          属性、枚举与序列化.md
         
       </div>
     </a>
   
   
-    <a href="/blog/2018/06/18/eight-md-md/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2019/02/15/JS数据类型/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">this与正则表达式</div>
+      <div class="article-nav-title">JS数据类型.md</div>
     </a>
   
 </nav>

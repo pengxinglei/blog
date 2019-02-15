@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JS数据类型.md | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS数据类型 原始值与引用数据类型原始值 ==&amp;gt; 基本数据类型number string boolean undefined null 复杂数据类型/引用数据类型 objectArray Object Function typeof 检测数据类型Array类型第一种使用Array构造函数var arr = new Array() 第二种字面量表示法var arr = [] Object类型第">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS数据类型.md">
+<meta property="og:url" content="http://yoursite.com/2019/02/15/JS数据类型/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JS数据类型 原始值与引用数据类型原始值 ==&amp;gt; 基本数据类型number string boolean undefined null 复杂数据类型/引用数据类型 objectArray Object Function typeof 检测数据类型Array类型第一种使用Array构造函数var arr = new Array() 第二种字面量表示法var arr = [] Object类型第">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-15T03:18:11.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS数据类型.md">
+<meta name="twitter:description" content="JS数据类型 原始值与引用数据类型原始值 ==&amp;gt; 基本数据类型number string boolean undefined null 复杂数据类型/引用数据类型 objectArray Object Function typeof 检测数据类型Array类型第一种使用Array构造函数var arr = new Array() 第二种字面量表示法var arr = [] Object类型第">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="psot-JS数据类型" class="article article-type-psot" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/02/15/JS数据类型/" class="article-date">
+  <time datetime="2019-02-14T16:00:00.000Z" itemprop="datePublished">2019-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS数据类型.md
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JS数据类型-原始值与引用数据类型"><a href="#JS数据类型-原始值与引用数据类型" class="headerlink" title="JS数据类型 原始值与引用数据类型"></a>JS数据类型 原始值与引用数据类型</h3><h4 id="原始值-gt-基本数据类型"><a href="#原始值-gt-基本数据类型" class="headerlink" title="原始值 ==&gt; 基本数据类型"></a>原始值 ==&gt; 基本数据类型</h4><p>number string boolean undefined null</p>
+<h4 id="复杂数据类型-引用数据类型-object"><a href="#复杂数据类型-引用数据类型-object" class="headerlink" title="复杂数据类型/引用数据类型 object"></a>复杂数据类型/引用数据类型 object</h4><p>Array Object Function</p>
+<h4 id="typeof-检测数据类型"><a href="#typeof-检测数据类型" class="headerlink" title="typeof 检测数据类型"></a>typeof 检测数据类型</h4><h3 id="Array类型"><a href="#Array类型" class="headerlink" title="Array类型"></a>Array类型</h3><p>第一种使用Array构造函数<br>var arr = new Array()</p>
+<p>第二种字面量表示法<br>var arr = []</p>
+<h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3><p>第一种Object构造函数<br>var obj = new Object();<br>obj.name = ‘aa’;<br>obj[‘age’] = 18; ==&gt; [age]表示变量</p>
+<p>第二种字面量</p>
+<p>简单字面量<br>var obj = {};<br>obj.name = ‘aa’;</p>
+<p>嵌套字面量<br>var obj = {name:’aa’}</p>
+<h4 id="JSON数据键值都是双引号-当键里面有空格、“-”等特殊符号以及关键字等都要引号"><a href="#JSON数据键值都是双引号-当键里面有空格、“-”等特殊符号以及关键字等都要引号" class="headerlink" title="JSON数据键值都是双引号 当键里面有空格、“-”等特殊符号以及关键字等都要引号"></a>JSON数据键值都是双引号 当键里面有空格、“-”等特殊符号以及关键字等都要引号</h4><h4 id="第三种工厂方式-驼峰式命名"><a href="#第三种工厂方式-驼峰式命名" class="headerlink" title="第三种工厂方式 驼峰式命名"></a>第三种工厂方式 驼峰式命名</h4><p>function createObj(name){<br>    var obj = new Object();<br>    obj.name = name;<br>    return obj;<br>};<br>var p = createObj(“a”);</p>
+<h4 id="第四种构造函数-驼峰式命名，首字母大写"><a href="#第四种构造函数-驼峰式命名，首字母大写" class="headerlink" title="第四种构造函数 驼峰式命名，首字母大写"></a>第四种构造函数 驼峰式命名，首字母大写</h4><p>function CreateObj(name){<br>    this.name = name;<br>};<br>var p = new CreateObj(‘a’)</p>
+<h3 id="function类型"><a href="#function类型" class="headerlink" title="function类型"></a>function类型</h3><p>函数声明<br>function a(x,y){<br>    return x+y;<br>}</p>
+<p>函数表达式<br>var a = function(x,y){<br>    return x+y;<br>}</p>
+<h4 id="区别：声明调用可以在前后调用，表达式必须在后调用"><a href="#区别：声明调用可以在前后调用，表达式必须在后调用" class="headerlink" title="区别：声明调用可以在前后调用，表达式必须在后调用"></a>区别：声明调用可以在前后调用，表达式必须在后调用</h4><h4 id="值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组"><a href="#值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组" class="headerlink" title="值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组"></a>值类型与引用类型的区别：值类型不会改变原数组，引用类型会改变原数组</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/15/JS数据类型/" data-id="cjs5q0v7j000ntsv6lsutx2uq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2019/02/15/对象与原型/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          对象与原型.md
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2018/07/22/35-md-md/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">35-md.md</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/02/15/属性与枚举/">属性、枚举与序列化.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/02/15/对象与原型/">对象与原型.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/02/15/JS数据类型/">JS数据类型.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/22/35-md-md/">35-md.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/21/34-md-md/">路由 vue-router</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

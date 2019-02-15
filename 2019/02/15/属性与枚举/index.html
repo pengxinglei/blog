@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>属性、枚举与序列化.md | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="属性添加/获取 ./[]用[]的时候不加引号代表变量，如obj[age]和obj[‘age’] .和[]的区别: .取自身的属性  []可以是变量删除 delete用法：delete obj.name/obj[‘name’] 检测属性 判断对象中是否存在属性in运算符 返回布尔值用法：属性 in 对象 (‘name’ in obj)  hasOwnPropety()方法 (对象的方法) 返回布尔值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="属性、枚举与序列化.md">
+<meta property="og:url" content="http://yoursite.com/2019/02/15/属性与枚举/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="属性添加/获取 ./[]用[]的时候不加引号代表变量，如obj[age]和obj[‘age’] .和[]的区别: .取自身的属性  []可以是变量删除 delete用法：delete obj.name/obj[‘name’] 检测属性 判断对象中是否存在属性in运算符 返回布尔值用法：属性 in 对象 (‘name’ in obj)  hasOwnPropety()方法 (对象的方法) 返回布尔值">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-15T04:24:12.515Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="属性、枚举与序列化.md">
+<meta name="twitter:description" content="属性添加/获取 ./[]用[]的时候不加引号代表变量，如obj[age]和obj[‘age’] .和[]的区别: .取自身的属性  []可以是变量删除 delete用法：delete obj.name/obj[‘name’] 检测属性 判断对象中是否存在属性in运算符 返回布尔值用法：属性 in 对象 (‘name’ in obj)  hasOwnPropety()方法 (对象的方法) 返回布尔值">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="psot-属性与枚举" class="article article-type-psot" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/02/15/属性与枚举/" class="article-date">
+  <time datetime="2019-02-14T16:00:00.000Z" itemprop="datePublished">2019-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      属性、枚举与序列化.md
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="添加-获取"><a href="#添加-获取" class="headerlink" title="添加/获取 ./[]"></a>添加/获取 ./[]</h4><p>用[]的时候不加引号代表变量，如obj[age]和obj[‘age’]</p>
+<h4 id="和-的区别-取自身的属性-可以是变量"><a href="#和-的区别-取自身的属性-可以是变量" class="headerlink" title=".和[]的区别: .取自身的属性  []可以是变量"></a>.和[]的区别: .取自身的属性  []可以是变量</h4><h4 id="删除-delete"><a href="#删除-delete" class="headerlink" title="删除 delete"></a>删除 delete</h4><p>用法：delete obj.name/obj[‘name’]</p>
+<h3 id="检测属性-判断对象中是否存在属性"><a href="#检测属性-判断对象中是否存在属性" class="headerlink" title="检测属性 判断对象中是否存在属性"></a>检测属性 判断对象中是否存在属性</h3><h4 id="in运算符-返回布尔值"><a href="#in运算符-返回布尔值" class="headerlink" title="in运算符 返回布尔值"></a>in运算符 返回布尔值</h4><p>用法：属性 in 对象 (‘name’ in obj) </p>
+<h4 id="hasOwnPropety-方法-对象的方法-返回布尔值"><a href="#hasOwnPropety-方法-对象的方法-返回布尔值" class="headerlink" title="hasOwnPropety()方法 (对象的方法) 返回布尔值"></a>hasOwnPropety()方法 (对象的方法) 返回布尔值</h4><p>用法:对象.hasOwnPropety(属性)</p>
+<h4 id="undefined-值的判断-返回布尔值"><a href="#undefined-值的判断-返回布尔值" class="headerlink" title="!undefined 值的判断 返回布尔值"></a>!undefined 值的判断 返回布尔值</h4><p>用法 对象.属性 !undefined </p>
+<h3 id="枚举-遍历"><a href="#枚举-遍历" class="headerlink" title="枚举/遍历"></a>枚举/遍历</h3><h4 id="for-in-遍历对象和数组"><a href="#for-in-遍历对象和数组" class="headerlink" title="for in 遍历对象和数组"></a>for in 遍历对象和数组</h4><p>for(变量 in 对象){}<br>获取值 对象[变量]<br>变量(字符串)默认为属性(键)</p>
+<p>for(变量 in 数组){}<br>获取值 数组[变量]<br>变量为索引</p>
+<h4 id="数组可以用for循环"><a href="#数组可以用for循环" class="headerlink" title="数组可以用for循环"></a>数组可以用for循环</h4><p>for(var i=0;i&lt;arr.length;i++){}</p>
+<h4 id="forEach和map主要是用于数组"><a href="#forEach和map主要是用于数组" class="headerlink" title="forEach和map主要是用于数组"></a>forEach和map主要是用于数组</h4><p>forEach没有返回值 map有返回值且改变原有数据</p>
+<p>数组.forEach(function(item,index){})</p>
+<p>数组.map(function(item,index){<br>    return item<br>})</p>
+<h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><p>JSON.parse()对象字符串转为对象<br>JSON.stringify()对象转为对象字符串</p>
+<p>JSON.parse转为对象的时候属于深拷贝</p>
+<h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>arr.slice()截取<br>arr.concat()连接，返回新数组<br>arr.slice(0) arr.slice(a,b)左闭右开[a,b)</p>
+<h4 id="对象-JSON-parse-JSON-stringify-obj"><a href="#对象-JSON-parse-JSON-stringify-obj" class="headerlink" title="对象 JSON.parse(JSON.stringify(obj))"></a>对象 JSON.parse(JSON.stringify(obj))</h4><p>实例：数组对象有X返回’1’,否则返回’2’<br>arr.forEach(function(item,index){<br>    for(i in item){<br>        if(i == “x”){<br>            console.log(‘1’)<br>        }else{<br>            console.log(‘2’)<br>        }<br>    }<br>})</p>
+<p>arr.forEach(function(item,index){<br>    item.hasOwnPropety(‘x’);<br>    item.x !== undefined<br>})</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/15/属性与枚举/" data-id="cjs5q0v8y0011tsv6h5jijfcs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2019/02/15/对象与原型/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">对象与原型.md</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/02/15/属性与枚举/">属性、枚举与序列化.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/02/15/对象与原型/">对象与原型.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/02/15/JS数据类型/">JS数据类型.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/22/35-md-md/">35-md.md</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/07/21/34-md-md/">路由 vue-router</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
