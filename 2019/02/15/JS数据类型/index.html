@@ -7,17 +7,17 @@
   
   <title>JS数据类型 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JS数据类型 原始值与引用数据类型 原始值 ==&amp;gt; 基本数据类型1.number2.string3.boolean4.undefined5.null  复杂数据类型/引用数据类型 objectArray Object Function    typeof 检测数据类型 Array类型 第一种使用Array构造函数var arr = new Array()  第二种字面量表示法var arr">
+  <meta name="description" content="JS数据类型 原始值与引用数据类型 原始值 ==&amp;gt; 基本数据类型1.number2.string3.boolean4.undefined5.null  复杂数据类型/引用数据类型 object1.Array2.Object3.Function    typeof 检测数据类型 Array类型 第一种使用Array构造函数var arr = new Array()  第二种字面量表示法var">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS数据类型">
 <meta property="og:url" content="http://yoursite.com/2019/02/15/JS数据类型/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JS数据类型 原始值与引用数据类型 原始值 ==&amp;gt; 基本数据类型1.number2.string3.boolean4.undefined5.null  复杂数据类型/引用数据类型 objectArray Object Function    typeof 检测数据类型 Array类型 第一种使用Array构造函数var arr = new Array()  第二种字面量表示法var arr">
+<meta property="og:description" content="JS数据类型 原始值与引用数据类型 原始值 ==&amp;gt; 基本数据类型1.number2.string3.boolean4.undefined5.null  复杂数据类型/引用数据类型 object1.Array2.Object3.Function    typeof 检测数据类型 Array类型 第一种使用Array构造函数var arr = new Array()  第二种字面量表示法var">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-15T08:22:50.272Z">
+<meta property="og:updated_time" content="2019-02-15T08:28:41.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS数据类型">
-<meta name="twitter:description" content="JS数据类型 原始值与引用数据类型 原始值 ==&amp;gt; 基本数据类型1.number2.string3.boolean4.undefined5.null  复杂数据类型/引用数据类型 objectArray Object Function    typeof 检测数据类型 Array类型 第一种使用Array构造函数var arr = new Array()  第二种字面量表示法var arr">
+<meta name="twitter:description" content="JS数据类型 原始值与引用数据类型 原始值 ==&amp;gt; 基本数据类型1.number2.string3.boolean4.undefined5.null  复杂数据类型/引用数据类型 object1.Array2.Object3.Function    typeof 检测数据类型 Array类型 第一种使用Array构造函数var arr = new Array()  第二种字面量表示法var">
   
     <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -90,7 +90,7 @@
 <h6 id="JS数据类型-原始值与引用数据类型"><a href="#JS数据类型-原始值与引用数据类型" class="headerlink" title="JS数据类型 原始值与引用数据类型"></a>JS数据类型 原始值与引用数据类型</h6><ul>
 <li><p>原始值 ==&gt; 基本数据类型<br>1.number<br>2.string<br>3.boolean<br>4.undefined<br>5.null</p>
 </li>
-<li><p>复杂数据类型/引用数据类型 object<br>Array Object Function</p>
+<li><p>复杂数据类型/引用数据类型 object<br>1.Array<br>2.Object<br>3.Function</p>
 </li>
 </ul>
 <hr>
@@ -101,8 +101,14 @@
 <li><p>第二种字面量表示法<br>var arr = []</p>
 </li>
 </ul>
-<h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3><p>第一种Object构造函数<br>var obj = new Object();<br>obj.name = ‘aa’;<br>obj[‘age’] = 18; ==&gt; [age]表示变量</p>
-<p>第二种字面量</p>
+<hr>
+<h6 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h6><ul>
+<li><p>第一种Object构造函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = &apos;aa&apos;;</span><br><span class="line">obj[&apos;age&apos;] = 18;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二种字面量</p>
+</li>
+</ul>
 <p>简单字面量<br>var obj = {};<br>obj.name = ‘aa’;</p>
 <p>嵌套字面量<br>var obj = {name:’aa’}</p>
 <h4 id="JSON数据键值都是双引号-当键里面有空格、“-”等特殊符号以及关键字等都要引号"><a href="#JSON数据键值都是双引号-当键里面有空格、“-”等特殊符号以及关键字等都要引号" class="headerlink" title="JSON数据键值都是双引号 当键里面有空格、“-”等特殊符号以及关键字等都要引号"></a>JSON数据键值都是双引号 当键里面有空格、“-”等特殊符号以及关键字等都要引号</h4><h4 id="第三种工厂方式-驼峰式命名"><a href="#第三种工厂方式-驼峰式命名" class="headerlink" title="第三种工厂方式 驼峰式命名"></a>第三种工厂方式 驼峰式命名</h4><p>function createObj(name){<br>    var obj = new Object();<br>    obj.name = name;<br>    return obj;<br>};<br>var p = createObj(“a”);</p>
@@ -113,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/15/JS数据类型/" data-id="cjs5scyfy000oa0v6hu3e8x25" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/15/JS数据类型/" data-id="cjs5skcly000pccv6zs6snega" class="article-share-link">Share</a>
       
       
     </footer>
