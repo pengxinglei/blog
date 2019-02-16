@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="JS一切皆对象  二大类 原始值 + 对象 对象有区别 函数对象与普通对象 函数对象是通过new Function(){}typeof为function 普通对象typeof为object 实例属于普通对象    每一个函数对象都有一个prototype属性 普通对象没有 prototype下面有constructor属性指向这个函数  实例:12345function Person()&amp;#123">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-16T01:37:35.965Z">
+<meta property="og:updated_time" content="2019-02-16T01:42:44.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象与原型">
 <meta name="twitter:description" content="JS一切皆对象  二大类 原始值 + 对象 对象有区别 函数对象与普通对象 函数对象是通过new Function(){}typeof为function 普通对象typeof为object 实例属于普通对象    每一个函数对象都有一个prototype属性 普通对象没有 prototype下面有constructor属性指向这个函数  实例:12345function Person()&amp;#123">
@@ -99,58 +99,12 @@
 <li>prototype下面有constructor属性指向这个函数</li>
 </ul>
 <p>实例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;&#125; //空的函数</span><br><span class="line">Person.prototypr.name = &apos;sonia&apos;;</span><br><span class="line">Person.prototype.age = 22;</span><br><span class="line">var person1 = new Pewson();</span><br><span class="line">var person2 = new Pewson();</span><br></pre></td></tr></table></figure></p>
-<table>
-<thead>
-<tr>
-<th>Person</th>
-<th>Person prototype</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>prototype</td>
-<td>constructor</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td></td>
-<td>name</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td></td>
-<td>age</td>
-<td></td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>person1</td>
-<td>person2</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>–proto–</td>
-<td>–proto–</td>
-</tr>
-</tbody>
-</table>
+<p>Person|Person prototype<br>prototype|constructor<br> |name<br> |age|<br>person1|person2<br>–proto–|–proto–</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/15/对象与原型/" data-id="cjs6tbif80010vsv6uogxdyew" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/15/对象与原型/" data-id="cjs6ti2o100104wv6od5ut4l6" class="article-share-link">Share</a>
       
       
     </footer>
